@@ -12,7 +12,7 @@ import Stack from './components/stack'
 import Animations from "./components/animation"
 import Animation2 from './components/animation2'
 import Footer3 from './components/Footer3'
-import Project from './components/Project.JSX'
+import Project from './components/Project.jsx'
 
 function App() {
   const [showContent, setShowContent] = useState(false)
