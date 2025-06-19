@@ -1,5 +1,5 @@
 import React from 'react'
-import Project1 from './projectscomponents/Project1'
+import Project1 from './projectscomponents/project1'
 import { NavLink } from 'react-router-dom'
 
 const Project = () => {
