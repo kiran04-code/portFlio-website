@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+p{
+  font-family: 'Poppins', 'sans-serif',
+}
+a{
+  font-family: 'Poppins', 'sans-serif',
+}
+
+h1{
+  font-family: "Outfit", sans-serif;
+}
+
+p{
+  font-family: "Edu NSW ACT Hand Pre", cursive;
+}
+
+.scroll-box {
+background-color: black;
+}

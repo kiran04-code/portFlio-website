@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+body {
+  background-color: black;
+}
+
+.heroshape {
+  width: 46vw;
+  height: 36vw;
+  right: 0;
+  position: absolute;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  filter: blur(25px);
+}
+
+.hero {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 174, 88);
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  filter: blur(20px);
+  position: absolute;
+}
+
+.hero2 {
+  height: 28vw;
+  width: 30vw;
+  background-color: rgb(255, 174, 88);
+  border-radius: 50%;
+  filter: blur(20px);
+  position: absolute;
+  animation-name: Animi2;
+  animation-timing-function: linear;
+  animation-duration: 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.hero3 {
+  height: 28vw;
+  width: 30vw;
+  background-color: rgb(255, 174, 88);
+  border-radius: 50%;
+  filter: blur(20px);
+  position: absolute;
+  animation-name: Animi;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes Animi {
+  from {
+    transform: translate(-10%, -10%);
+  }
+  to {
+    transform: translate(10, -10%);
+  }
+}
+
+@keyframes Animi2 {
+  from {
+    transform: translate(70%, -7%);
+  }
+  to {
+    transform: translate(-20%, 20%);
+  }
+}
+
+/* ✅ Mobile responsiveness */
+@media (max-width: 768px) {
+  .heroshape {
+    width: 80vw;
+    height: 60vw;
+    filter: blur(20px);
+    margin-top: 75px;
+  }
+
+  .hero2,
+  .hero3 {
+    width: 50vw;
+    height: 45vw;
+    filter: blur(15px);
+  }
+}
+/* animation 2 */
+.heros-shape{
+    height: 27vw;
+    width: 27vw;
+    border-radius: 50%;
+    background-color: rgb(255, 174, 88);
+    filter: blur(20px);
+    position: absolute;
+}
+.heros-shape2{
+    height: 27vw;
+    width: 27vw;
+    border-radius: 50%;
+    background-color:rgb(255, 174, 88);
+    filter: blur(20px);
+    position: absolute;
+    animation-name: animi;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;animation-direction: alternate;}
+.kiran::after {
+  content: "MERN Developer & Web3 Enthusiast";
+  display: inline-block;
+  color: black;
+  font-size: 15px;
+  margin: 7px;
+  border-radius: 10px;
+  padding: 3px 6px;
+  background-color: rgb(255, 169, 71);
+}
+
+/* ✅ Mobile Responsive */
+@media (max-width: 768px) {
+  .kiran::after {
+    font-size: 12px;
+    padding: 2px 5px;
+  }
+}
+
+/* ✅ Extra Small Devices */
+@media (max-width: 480px) {
+  .kiran::after {
+    font-size: 10px;
+    padding: 2px 4px;
+    content: "MERN Dev & Web3";
+  }
+}
+
+@keyframes animi {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(10%, -10%);
+  }
+}
