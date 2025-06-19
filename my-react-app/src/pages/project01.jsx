@@ -115,7 +115,7 @@ const Project001 = () => {
                         <div className="w-full flex gap-1 mb-3">
                             <div className="w-[15px] h-[15px] bg-red-600 rounded-full"></div>
                             <div className="w-[15px] h-[15px] bg-yellow-600 rounded-full"></div>
-                            <div className="w-[15px] h-[15px] bg-green-600 rounded-full"></div>
+                            <div className="w-[15px] h-[15px] bg-green-700 rounded-full"></div>
                         </div>
                         <img
                             src="/01.png"
