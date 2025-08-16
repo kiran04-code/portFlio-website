@@ -7,7 +7,6 @@ import { FaGithub } from "react-icons/fa6";
 import { useParams } from 'react-router-dom';
 import { projetcs } from '../assets/assets';
 import { motion ,useScroll } from 'motion/react';
-import ShoWVideo from './ShoWVideo';
 const Project01 = () => {
   const { projs } = useParams()
   const projectFounded = projetcs.filter((items) => items.name === projs)
