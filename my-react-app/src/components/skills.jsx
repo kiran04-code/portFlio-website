@@ -8,6 +8,8 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { SiPostman } from "react-icons/si";
 import { FaDocker } from "react-icons/fa";
 import { motion } from "motion/react";
+import { GrGraphQl } from "react-icons/gr";
+import { RiNextjsFill } from "react-icons/ri";
 const Skills = () => {
   const skills = [
     { icon: <FaHtml5 />, name: "HTML", effect: "hover:-translate-y-2" },
@@ -16,7 +18,9 @@ const Skills = () => {
     { icon: <SiTypescript />, name: "Typescript", effect: "hover:scale-110" },
     { icon: <FaNodeJs />, name: "Node.js", effect: "hover:rotate-[-12deg]" },
     { icon: <SiExpress />, name: "Express.js", effect: "hover:translate-x-3" },
+    { icon: <GrGraphQl />, name: "GraphQl", effect: "hover:translate-x-3" },
     { icon: <IoLogoReact />, name: "React", effect: "hover:scale-105 hover:rotate-3" },
+    { icon: <RiNextjsFill />, name: "Nextjs", effect: "hover:scale-105 hover:rotate-3" },
     { icon: <SiRedux />, name: "Redux", effect: "hover:rotate-12" },
     { icon: <BiLogoMongodb />, name: "MongoDB", effect: "hover:scale-110" },
     { icon: <FaGitAlt />, name: "Git", effect: "hover:-rotate-6" },
