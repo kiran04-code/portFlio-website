@@ -21,9 +21,15 @@ import img2_proj6 from "./img6_proj.jpg"
 import img2_proj7 from "./img7_proj.jpg"
 import L2 from "./image2.png"
 import L1 from "./l1.png"
+import E2 from "./E2.jpg"
+import E1 from "./E1.jpg"
+import E3 from "./E3.jpg"
+import E4 from "./E4.jpg"
+import E5 from "./E5.jpg"
+import E6 from "./E6.jpg"
 
 export const images = {
-  javascript, project01, L1, L2, Project2, proj1_im1, proj1_im2, Project3, img2_proj3, img2_proj4, img2_proj5, img2_proj6, img2_proj7,
+  javascript, project01, L1, L2, Project2, proj1_im1, E2,E1,E3,E4,E5,E6,proj1_im2, Project3, img2_proj3, img2_proj4, img2_proj5, img2_proj6, img2_proj7,
   proj2_img1, proj2_img2, proj2_img3, proj2_img4, proj2_img5, proj2_img6, proj2_img7, proj2_img8, proj2_img9, proj2_img10
 }
 export const ProjectThambnel = [
@@ -82,6 +88,19 @@ export const ProjectThambnel = [
       { techno: "Tailwind CSS", },
       { techno: "Node.js", },
       { techno: "Express.js", },
+      { techno: "MongoDB (Mongoose)", },
+    ]
+
+  },
+  {
+    name: "proj5",
+    projectName: " FreeLancing E-Commers Platfrom",
+    themabaiimg: E2
+    ,
+    tech: [
+      { techno: "Nexjs", },
+      { techno: "Tailwind CSS", },
+      { techno: "Typescript", },
       { techno: "MongoDB (Mongoose)", },
     ]
 
@@ -194,7 +213,60 @@ export const projetcs = [
         ]
       }
     ]
-  }
+  },
+  {
+    name: "proj5",
+    tittle: "Freelancing E-Commerce website",
+    description: "MaxxThrift is a Next.js-powered e-commerce platform offering a seamless shopping experience with secure checkout and real-time order tracking.",
+    liveproject: "https://www.maxxthrifts.shop/",
+ whybuild: [
+  { text: "To make trendy and affordable fashion accessible to everyone" },
+  { text: "To provide a seamless online shopping experience with secure checkout" },
+  { text: "To offer a curated collection of quality clothing with modern designs" },
+  { text: "To integrate search, filters, and personalized recommendations for customers" }
+]
+,
+    keyfaeture: [
+      { text: "Browers All Cloths " },
+      { text: "Buy Cloth Using Razorpay" },
+      { text: "Admin panel For Owner " },
+      { text: "List Product " },
+      { text: "See all Orders and Make Products Instack or OutStock" },
+      { text: "Clean and responsive UI" },
+      { text: "Scalable code architecture" },
+      { text: "User-friendly interface for Owner, Users" }
+    ],
+    projectImage: [E2, E3,E4,E5,E1,E6],
+    projectvIDEO: [],
+    techTASK: [
+      {
+        frontend: [
+          { text: "Nextjs, Framer Motion" }
+        ]
+      },
+      {
+        backend: [
+          { text: "Nextjs " }
+        ]
+      },
+      
+      {
+        database: [
+          { text: "MongoDB" }
+        ]
+      },
+      {
+        Payments: [
+          { text: "Razorpay Integration" }
+        ]
+      },
+      {
+        deployment: [
+          { text: "Vite + Vercal" }
+        ]
+      }
+    ]
+  },
   ,
   {
     name: "proj2",
