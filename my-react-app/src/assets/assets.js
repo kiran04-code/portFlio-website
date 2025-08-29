@@ -98,7 +98,7 @@ export const ProjectThambnel = [
     themabaiimg: E2
     ,
     tech: [
-      { techno: "Nexjs", },
+      { techno: "Nextjs", },
       { techno: "Tailwind CSS", },
       { techno: "Typescript", },
       { techno: "MongoDB (Mongoose)", },
