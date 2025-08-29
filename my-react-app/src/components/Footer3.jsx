@@ -8,7 +8,7 @@ const Footer3 = () => {
  }}
   whileInView={{
  opacity:1,
- y:[0,30]
+ y:[-5,20]
  }} 
  transition={{
   duration:1,

@@ -7,12 +7,13 @@ const Project001 = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex justify-center items-center w-full bg-[#ff9e44] rounded-2xl px-5 md:mt-5">
+    <div className="flex justify-center items-center w-full bg-[#292522] rounded-2xl px-5 md:mt-5  mt-2">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1, y: [50, -20] }}
         transition={{ duration: 0.7 }}
-        className="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-6     rounded-2xl  md:rounded-br-full bg-[#5a4c39] rounded-2xl"
+        className="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-6     
+        md:rounded-br-full bg-[#5a4c39] rounded-2xl  border-1 border-orange-300 "
       >
         {ProjectThambnel.map((items, index) => (
           <motion.div
@@ -32,7 +33,7 @@ const Project001 = () => {
             {/* Content */}
             <div className="p-4 flex flex-col space-y-2">
               {/* Meta info (example: could be project type or time) */}
-              <p className="text-gray-400 text-sm">2 min read</p>
+       
 
               {/* Project Name */}
               <h1 className="text-lg font-semibold leading-snug hover:text-orange-400 transition">
@@ -47,9 +48,14 @@ const Project001 = () => {
                   </span>
                 ))}
               </div>
+              
             </div>
+            
           </motion.div>
         ))}
+   <h1 className="hidden md:flex text-2xl font-bold absolute right-0 bg-gradient-to-b  from-gray-600 to-orange-400 bg-clip-text text-transparent bottom-0">
+  Code. Create. Inspire.
+</h1>
       </motion.div>
     </div>
   );

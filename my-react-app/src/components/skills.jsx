@@ -29,40 +29,40 @@ const Skills = () => {
     { icon: <FaDocker />, name: "Docker", effect: "hover:-rotate-6" },
   ];
 
-  return (
-    <motion.div 
-    initial={{
-      opacity:0
-    }}
-    transition={{
-duration:0.8,
-delay:1,
-ease:"anticipate"
-    }}
-     whileInView={{
-  opacity:1,
-  y:[0,40]
-    }} className="w-full px-4 py-12 bg-black " id="Skills">
-      {/* Gradient Title */}
-      <div className="text-center mb-10">
-        <p className="text-sm sm:text-base text-zinc-400 font-medium">My Technical Skills</p>
-        <h2 className="text-transparent bg-clip-text bg-orange-300 text-2xl sm:text-3xl md:text-4xl font-extrabold font-poppins">
-          Tech Stacks.
+return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      transition={{ duration: 0.8, delay: 0.5, ease: "anticipate" }}
+      whileInView={{ opacity: 1, y: [40, 0] }}
+      className="w-full px-6 py-16 bg-gradient-to-b from-black via-[#181818] to-black"
+      id="Skills"
+    >
+      {/* Section Header */}
+      <div className="text-center mb-12">
+        <p className="text-sm sm:text-base text-zinc-400 font-medium">
+          My Technical Skills
+        </p>
+        <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-200 text-3xl sm:text-4xl md:text-5xl font-extrabold relative inline-block">
+          Tech Stacks
+          <span className="block w-16 h-[3px] bg-orange-300 mx-auto mt-2 rounded-full"></span>
         </h2>
       </div>
 
-      {/* Grid of Skills */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 place-items-center px-2 sm:px-6 md:px-10">
+      {/* Skills Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 place-items-center">
         {skills.map((skill, index) => (
-          <div
+          <motion.div
             key={index}
-            className={`w-24 sm:w-28 md:w-32 bg-zinc-900 hover:bg-orange-500/20 rounded-tl-[20px] rounded-br-[20px] flex flex-col items-center justify-center p-4 transition-all duration-300 ease-in-out ${skill.effect}`}
+            whileHover={{ scale: 1.08 }}
+            className="w-24 sm:w-28 md:w-32 h-28 bg-zinc-900/70 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-orange-500/30 flex flex-col items-center justify-center p-4 transition-all duration-300"
           >
-            <div className="text-orange-300 text-4xl sm:text-5xl mb-2">{skill.icon}</div>
-            <h2 className="text-white text-sm sm:text-base font-semibold text-center">
+            <div className="text-orange-300 text-4xl sm:text-5xl mb-2 group-hover:animate-pulse">
+              {skill.icon}
+            </div>
+            <h2 className="text-white text-sm sm:text-base font-medium text-center">
               {skill.name}
             </h2>
-          </div>
+          </motion.div>
         ))}
       </div>
     </motion.div>
