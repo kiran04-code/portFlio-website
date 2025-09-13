@@ -27,7 +27,7 @@ const Footer = () => {
     chunked.push(skills.slice(i, i + 5));
   }
   return (
-    <div className="relative w-full py-6 space-y-10">
+    <div className="relative w-full py-6 space-y-10" id="Skills" >
       {chunked.map((row, rowIndex) => (
         <div key={rowIndex} className="relative">
 

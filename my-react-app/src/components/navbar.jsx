@@ -41,7 +41,7 @@ const Navbar = () => {
                 }}
                 className={` 
     ${hover === show.name ? "text-orange-300" : ""}
-    hover:text-orange-300 font-semibold transition-colors duration-200`}
+    hover:text-orange-300 font-semibold transition-colors duration-200 ${show.name === "Contact" ? "bg-orange-400 px py-1  rounded-3xl p-2":null}   `  }
               >
                 {show.name}
               </Link>

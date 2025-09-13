@@ -14,7 +14,6 @@ const About = () => {
       id="About"
     >
       <div className="w-full max-w-5xl bg-[#1e1e1f] p-10 md:p-10 border-1 border-dashed border-orange-300 shadow-2xl  transition-all duration-500">
-        {/* Heading */}
         <h1 className="text-orange-300 font-extrabold text-4xl sm:text-5xl mb-10 text-center">
           Know <span className="text-white">About Me!</span>
         </h1>
@@ -31,7 +30,6 @@ const About = () => {
           ))}
         </div>
 
-        {/* Content Grid */}
         <div className="grid md:grid-cols-2 gap-10">
           {/* Left Section */}
           <div className="flex flex-col justify-center gap-4">
@@ -48,7 +46,6 @@ const About = () => {
             </p>
           </div>
 
-          {/* Right Section */}
           <div className="flex flex-col justify-center gap-4">
             <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
               I focus on{" "}
@@ -75,7 +72,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Decorative Line */}
         <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-orange-300 to-transparent mt-12 rounded-full"></div>
       </div>
     </div>
