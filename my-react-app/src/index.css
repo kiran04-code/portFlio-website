@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=Great+Vibes&family=Noto+Sans+JP:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Dancing+Script:wght@400..700&family=Marcellus&family=Outfit:wght@100..900&family=Viga&display=swap');
 @import "tailwindcss";
-
+body {
+  background: #000;
+}
 a{
   font-family: 'Poppins', 'sans-serif',
 }

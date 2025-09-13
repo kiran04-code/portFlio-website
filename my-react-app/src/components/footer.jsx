@@ -93,7 +93,7 @@ const Footer = () => {
         {/* Middle Image + Text */}
         <div className="text-center px-4 md:px-10 relative bottom-0 md:bottom-11 mt-8 md:mt-0">
           <div className="flex justify-center items-center mb-4">
-            <img src="/img.png" alt="stack" className="w-48 md:w-45" />
+            <img src="/Gemini_Generated_Image_tpj19dtpj19dtpj1-removebg-preview.png" alt="stack" className="w-48 md:w-45" />
           </div>
           <h1 className="text-xl md:text-2xl font-bold text-orange-300">
             Stack & Skills

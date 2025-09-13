@@ -13,12 +13,12 @@ import Animations from "./components/animation"
 import Animation2 from './components/animation2'
 import Footer3 from './components/Footer3'
 import Project from './components/project'
-import {motion ,useScroll} from "motion/react"
-
+import { motion, useScroll } from "motion/react"
 
 function App() {
   const [showContent, setShowContent] = useState(false)
-  const {scrollYProgress} =  useScroll()
+  const { scrollYProgress } = useScroll()
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true)
@@ -27,37 +27,40 @@ function App() {
     return () => clearTimeout(timer)
   }, [])
 
-
-return (
-    <div className='w-full h-screen bg-black text-white'>
-      
+  return (
+    <div className="w-full h-screen bg-black text-white relative">
       <Reloader />
       {showContent && (
         <>
-        <motion.div style={{
-          scaleX:scrollYProgress
-        }}   className='w-full bg-gradient-to-l z-200 fixed from-orange-300 to-orange-900 h-3'></motion.div>
+          <motion.div
+            style={{ scaleX: scrollYProgress }}
+            className="w-full bg-gradient-to-l z-200 fixed from-orange-300 to-orange-900 h-3"
+          ></motion.div>
+
+
           <Navbar />
           <Title />
-          <Animations />
-          <ContactMe />
+
+
+
+          {/* Top-right image */}
+          <img
+            src="/background-S4EJ6pKPdfdf.png" // <-- Replace this with your image path
+            alt="top right"
+            className="absolute md:top-0 md:right-0 top-25   w-[500vw]" // adjust size as needed
+          />
+
+     
           <About />
-          <Project/>
+          <Project />
           <Stack />
           <Footer />
           <Footer2 />
-          <Footer3 /> 
-          {/* <Skills /> */}
-          {/* <Animation2 />
-
-          {/* All routes go inside <Routes> in React Router v6 */}
-          
+          <Footer3 />
         </>
       )}
     </div>
-  
-);
-
+  )
 }
 
 export default App

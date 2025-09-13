@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
-body {
-  background-color: black;
-}
+
 
 .heroshape{
   width: 46vw;
