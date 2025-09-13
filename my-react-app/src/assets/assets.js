@@ -267,7 +267,7 @@ export const projetcs = [
       }
     ]
   },
-  ,
+  
   {
     name: "proj2",
     tittle: "🛒 GreenCart –  Grocery Web Application",

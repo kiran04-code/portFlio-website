@@ -6,17 +6,16 @@ import Footer3 from '../components/Footer3';
 import { FaGithub } from "react-icons/fa6";
 import { useParams } from 'react-router-dom';
 import { projetcs } from '../assets/assets';
-import { motion ,useScroll } from 'motion/react';
+import { motion, useScroll } from 'motion/react';
 const Project01 = () => {
   const { projs } = useParams()
   const projectFounded = projetcs.filter((items) => items.name === projs)
-  // Scroll to top when the component is mounted
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
-  const {scrollYProgress} =useScroll()
-const [show,setshow] = useState(false)
-const [src,setsrc] = useState('')
+  const { scrollYProgress } = useScroll()
+  const [show, setshow] = useState(false)
+  const [src, setsrc] = useState('')
 
 
   return (
@@ -26,11 +25,11 @@ const [src,setsrc] = useState('')
         projectFounded.map((items, index) =>
 
           <div className=" relative text-white min-h-screen bg-black">
-             <motion.div style={{
-          scaleX:scrollYProgress
-        }}   className='w-full bg-gradient-to-l z-200 fixed from-orange-300 to-orange-900 h-3'></motion.div>
+            <motion.div style={{
+              scaleX: scrollYProgress
+            }} className='w-full bg-gradient-to-l z-200 fixed from-orange-300 to-orange-900 h-3'></motion.div>
             <Navbar />
-            
+
             <div className="w-full min-h-screen px-10 py-10 flex flex-col lg:flex-row items-center gap-10">
               {/* Text Content */}
               <div className="flex-1 space-y-6">
@@ -57,7 +56,8 @@ const [src,setsrc] = useState('')
                 <div>
                   <h2 className="font-semibold text-lg text-orange-300 mb-1">🔧 Tech Stack</h2>
                   <ul className="list-disc list-inside text-gray-300 space-y-1">
-                    {items.techTASK.map((section, index) => {-0
+                    {items.techTASK.map((section, index) => {
+                      -0
                       const key = Object.keys(section)[0];
                       const value = section[key];
                       return (
@@ -107,7 +107,7 @@ const [src,setsrc] = useState('')
                       Visit QuickChat Live
                     </a>
                   </div>
-                 
+
                 </div>
               </div>
 
@@ -127,7 +127,7 @@ const [src,setsrc] = useState('')
                     <img
                       src={src}
                       alt="QuickChat Preview"
-                      
+
                       className="shadow-2xl w-full rounded-[7px]"
                     />
                   </div>
@@ -151,10 +151,10 @@ const [src,setsrc] = useState('')
                   </div>
                 ))} */}
               </div>
-          
+
             </div>
 
-            <Footer />
+
             <Footer2 />
             <Footer3 />
           </div>

@@ -44,11 +44,11 @@ return (
           <About />
           <Project/>
           <Stack />
-          <Skills />
-          <Animation2 />
           <Footer />
+          {/* <Skills /> */}
+          {/* <Animation2 />
           <Footer2 />
-          <Footer3 />
+          <Footer3 /> */}
 
           {/* All routes go inside <Routes> in React Router v6 */}
           
