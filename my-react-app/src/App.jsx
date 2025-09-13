@@ -45,10 +45,10 @@ return (
           <Project/>
           <Stack />
           <Footer />
+          <Footer2 />
+          <Footer3 /> 
           {/* <Skills /> */}
           {/* <Animation2 />
-          <Footer2 />
-          <Footer3 /> */}
 
           {/* All routes go inside <Routes> in React Router v6 */}
           
