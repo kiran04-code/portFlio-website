@@ -10,7 +10,7 @@ const About = () => {
 
   return (
     <div
-      className="w-full min-h-screen flex justify-center items-center relative px-4 py-24 z-[90] "
+      className="w-full min-h-screen flex justify-center items-center relative px-4 py-10 md:py-24 z-[90] "
       id="About"
     >
       <div className="w-full max-w-5xl bg-[#1e1e1f] p-10 md:p-10 border-1 border-dashed border-orange-300 shadow-2xl  transition-all duration-500">
