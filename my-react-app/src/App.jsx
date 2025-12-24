@@ -20,13 +20,20 @@ function App() {
   const [showContent, setShowContent] = useState(false)
   const { scrollYProgress } = useScroll()
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowContent(true)
-    }, 3000) // 3 seconds
 
-    return () => clearTimeout(timer)
-  }, [])
+  useEffect(() => {
+    // We check session storage here too to skip the 3s delay if they've seen it
+    const hasSeen = sessionStorage.getItem("hasSeenLoader");
+    
+    if (hasSeen) {
+      setShowContent(true);
+    } else {
+      const timer = setTimeout(() => {
+        setShowContent(true);
+      }, 3500); // Slightly longer than the loader progress
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   return (
     <div className="w-full h-screen bg-black text-white relative">
@@ -52,7 +59,6 @@ function App() {
           <Project />
           <Stack />
           <SkillOrbit />
-          <Footer2 />
           <Footer3 />
         </>
       )}

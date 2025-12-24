@@ -11,7 +11,7 @@ const Project01 = () => {
   const { projs } = useParams();
   const navigate = useNavigate();
   const projectFounded = projetcs.filter((items) => items.name === projs);
-  
+
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -26,26 +26,26 @@ const Project01 = () => {
   return (
     <div className="bg-[#050505] min-h-screen text-white selection:bg-orange-500/30">
       {/* Progress Bar */}
-      <motion.div 
-        style={{ scaleX }} 
-        className='fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-400 to-orange-600 z-[1000] origin-left' 
+      <motion.div
+        style={{ scaleX }}
+        className='fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-400 to-orange-600 z-[1000] origin-left'
       />
 
       <Navbar />
 
       {projectFounded.map((items, index) => (
         <div key={index} className="relative pt-24 pb-20">
-          
+
           {/* Header Section */}
           <div className="max-w-7xl mx-auto px-6 mb-16">
-            <button 
+            <button
               onClick={() => navigate(-1)}
               className="flex items-center gap-2 text-zinc-500 hover:text-orange-400 transition-colors mb-8 group"
             >
               <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" /> Back to Projects
             </button>
-            
-            <motion.h1 
+
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-5xl md:text-7xl font-black tracking-tighter mb-6"
@@ -64,10 +64,10 @@ const Project01 = () => {
           </div>
 
           <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12">
-            
+
             {/* Left Column: Technical Narrative */}
             <div className="lg:col-span-7 space-y-16">
-              
+
               {/* Description */}
               <section>
                 <p className="text-xl text-zinc-400 leading-relaxed italic border-l-2 border-orange-500 pl-6">
@@ -125,64 +125,63 @@ const Project01 = () => {
             </div>
 
             {/* Right Column: Visual Showcase */}
-           {/* Right Column: Visual Showcase (Overlay Scrolling) */}
-<div className="lg:col-span-5 relative">
-  <div className="sticky top-32">
-    <div className="flex items-center justify-between mb-4">
-      <h2 className="text-zinc-500 font-mono text-xs uppercase tracking-widest">Gallery Preview</h2>
-      <span className="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20">
-        {items.projectImage.length} Screens
-      </span>
-    </div>
+            {/* Right Column: Visual Showcase (Overlay Scrolling) */}
+            <div className="lg:col-span-5 relative">
+              <div className="sticky top-32">
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-zinc-500 font-mono text-xs uppercase tracking-widest">Gallery Preview</h2>
+                  <span className="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20">
+                    {items.projectImage.length} Screens
+                  </span>
+                </div>
 
-    {/* Scroll Container with hidden scrollbar */}
-    <div className="h-[70vh] overflow-y-auto pr-4 space-y-20 custom-gallery-scroll pb-20">
-      {items.projectImage.map((src, idx) => (
-        <motion.div 
-          key={idx}
-          initial={{ opacity: 0, scale: 0.9, y: 20 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="group relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a0a0a] shadow-[0_20px_50px_rgba(0,0,0,0.5)] sticky top-0"
-          style={{ top: `${idx * 20}px` }} // This creates the "Stacking" effect
-        >
-          {/* Top Browser Bar */}
-          <div className="flex items-center justify-between p-4 border-b border-white/5 bg-zinc-900/50 backdrop-blur-md">
-            <div className="flex gap-1.5">
-              <div className="w-2 h-2 rounded-full bg-red-500/40" />
-              <div className="w-2 h-2 rounded-full bg-yellow-500/40" />
-              <div className="w-2 h-2 rounded-full bg-green-500/40" />
+                {/* Scroll Container with hidden scrollbar */}
+                <div className="h-[70vh] overflow-y-auto pr-4 space-y-20 custom-gallery-scroll pb-20">
+                  {items.projectImage.map((src, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                      viewport={{ once: false, margin: "-100px" }}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
+                      className="group relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a0a0a] shadow-[0_20px_50px_rgba(0,0,0,0.5)] sticky top-0"
+                      style={{ top: `${idx * 20}px` }} // This creates the "Stacking" effect
+                    >
+                      {/* Top Browser Bar */}
+                      <div className="flex items-center justify-between p-4 border-b border-white/5 bg-zinc-900/50 backdrop-blur-md">
+                        <div className="flex gap-1.5">
+                          <div className="w-2 h-2 rounded-full bg-red-500/40" />
+                          <div className="w-2 h-2 rounded-full bg-yellow-500/40" />
+                          <div className="w-2 h-2 rounded-full bg-green-500/40" />
+                        </div>
+                        <span className="text-[10px] text-zinc-600 font-mono">view_screen_0{idx + 1}.png</span>
+                      </div>
+
+                      {/* Image Content */}
+                      <div className="relative">
+                        <img
+                          src={src}
+                          alt={`Preview ${idx}`}
+                          className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        {/* Glossy Overlay Reflection */}
+                        <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Scroll Indicator */}
+                <div className="mt-6 flex items-center justify-center gap-2 text-zinc-600">
+                  <div className="w-1 h-1 rounded-full bg-orange-500 animate-pulse" />
+                  <span className="text-[10px] uppercase tracking-[0.2em]">Scroll to explore gallery</span>
+                </div>
+              </div>
             </div>
-            <span className="text-[10px] text-zinc-600 font-mono">view_screen_0{idx + 1}.png</span>
-          </div>
-
-          {/* Image Content */}
-          <div className="relative">
-             <img 
-              src={src} 
-              alt={`Preview ${idx}`} 
-              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-            {/* Glossy Overlay Reflection */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
-          </div>
-        </motion.div>
-      ))}
-    </div>
-
-    {/* Scroll Indicator */}
-    <div className="mt-6 flex items-center justify-center gap-2 text-zinc-600">
-      <div className="w-1 h-1 rounded-full bg-orange-500 animate-pulse" />
-      <span className="text-[10px] uppercase tracking-[0.2em]">Scroll to explore gallery</span>
-    </div>
-  </div>
-</div>
           </div>
         </div>
       ))}
-      
-      <Footer2 />
+
       <Footer3 />
     </div>
   );

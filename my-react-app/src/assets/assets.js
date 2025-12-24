@@ -34,6 +34,22 @@ export const images = {
 }
 export const ProjectThambnel = [
   {
+    name: "proj4",
+    projectName: "HeathShield Vaccination Trcaker",
+    themabaiimg: L1,
+    tech: [
+      { techno: "React.js", },
+      { techno: "Tailwind CSS", },
+      { techno: "Node.js", },
+      { techno: "Express.js", },
+      { techno: "MongoDB (Mongoose)", },
+      { techno: "LeafLet.js" },
+      { techno: "RazorPay" },
+    ]
+  },
+  
+  
+  {
     name: "proj1",
     projectName: "Chat Web App",
     themabaiimg: project01,
@@ -46,8 +62,6 @@ export const ProjectThambnel = [
       { techno: "Socket.IO" },
     ]
   },
-
-
   {
     name: "proj2",
     projectName: "Grocery Web Application",
@@ -62,21 +76,7 @@ export const ProjectThambnel = [
       { techno: "Socket.IO" },
       { techno: "RazorPay" },
     ]
-
-  },
-  {
-    name: "proj4",
-    projectName: "HeathShield Vaccination Trcaker",
-    themabaiimg: L1,
-    tech: [
-      { techno: "React.js", },
-      { techno: "Tailwind CSS", },
-      { techno: "Node.js", },
-      { techno: "Express.js", },
-      { techno: "MongoDB (Mongoose)", },
-      { techno: "LeafLet.js" },
-      { techno: "RazorPay" },
-    ]
+    
   },
   {
     name: "proj3",
@@ -110,7 +110,7 @@ export const ProjectThambnel = [
 export const projetcs = [
   {
     name: "proj1",
-    tittle: "🚀QuickChat – Real-Time Chat Application",
+    tittle: "QuickChat – Real-Time Chat Application",
     description: "QuickChat is a modern real-time chat application built using the MERN stack and Socket.IO for instant bi-directional communication. It allows users to chat live with others, see online statuses, and enjoy a smooth, responsive UI – all without page reloads.",
     github: "https://github.com/kiran04-code/QuickChats.com.git",
     liveproject: "https://quickchats-com-5.onrender.com/",

@@ -1,59 +1,82 @@
 import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Reloader = () => {
-  const [visible, setVisible] = useState(false);
-  const [swipeOut, setSwipeOut] = useState(false);
-  const [contentHidden, setContentHidden] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const showTimer = setTimeout(() => {
-      setVisible(true);
-    }, 1000);
+    // Check if the user has already seen the loader in this session
+    const hasSeenLoader = sessionStorage.getItem("hasSeenLoader");
 
-    const swipeTimer = setTimeout(() => {
-      setSwipeOut(true);
-    }, 3000);
+    if (hasSeenLoader) {
+      setIsLoading(false);
+      return;
+    }
 
-    const hideTimer = setTimeout(() => {
-      setContentHidden(true);
-    }, 4000);
+    // Progress counter logic
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          setTimeout(() => {
+            setIsLoading(false);
+            sessionStorage.setItem("hasSeenLoader", "true");
+          }, 500); // Small pause at 100%
+          return 100;
+        }
+        return prev + 1;
+      });
+    }, 20); // Speed of the counter
 
-    return () => {
-      clearTimeout(showTimer);
-      clearTimeout(swipeTimer);
-      clearTimeout(hideTimer);
-    };
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className={`w-full h-screen bg-black overflow-hidden relative ${contentHidden ? 'hidden' : ''}`}>
-      <div
-        className={`w-full h-full absolute top-0 left-0 transition-all duration-1000 ease-in-out flex items-center justify-center
-          ${swipeOut ? "opacity-0 scale-90" : "opacity-100 scale-100"}
-          ${contentHidden ? "hidden" : ""}
-        `}
-      >
-        <div className="text-center px-4">
-          <h1
-            className={`text-4xl md:text-6xl font-extrabold text-orange-300 transform transition-all duration-1000 ease-out ${
-              visible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-10 scale-110"
-            }`}
-          >
-            Kiran.dev
-          </h1>
-
-          {visible && (
-            <p
-              className={`mt-4 text-lg md:text-2xl font-medium text-orange-300 transition-all duration-1000 ease-out delay-200 ${
-                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-              }`}
+    <AnimatePresence>
+      {isLoading && (
+        <motion.div
+          key="loader"
+          initial={{ y: 0 }}
+          exit={{ y: "-100%" }}
+          transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+          className="fixed inset-0 z-[999] flex flex-col items-center justify-center bg-[#0a0a0a] text-white"
+        >
+          {/* Main Name */}
+          <div className="overflow-hidden">
+            <motion.h1
+              initial={{ y: 100 }}
+              animate={{ y: 0 }}
+              className="text-4xl md:text-6xl font-bold tracking-tighter"
             >
-              Full Stack Developer
+              KIRAN RATHOD<span className="text-orange-400">.</span>
+            </motion.h1>
+          </div>
+
+          {/* Progress Percentage */}
+          <div className="absolute bottom-10 right-10 md:bottom-20 md:right-20">
+            <p className="text-6xl md:text-9xl font-light opacity-20 tabular-nums">
+              {progress}%
             </p>
-          )}
-        </div>
-      </div>
-    </div>
+          </div>
+
+          {/* Thin Progress Bar */}
+          <motion.div 
+            className="absolute bottom-0 left-0 h-1 bg-orange-400"
+            initial={{ width: 0 }}
+            animate={{ width: `${progress}%` }}
+          />
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="mt-4 text-zinc-500 uppercase tracking-[0.5em] text-xs"
+          >
+            Loading Experience
+          </motion.p>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 
