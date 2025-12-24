@@ -4,7 +4,7 @@ import { MdContactEmergency } from "react-icons/md";
 
 const Title = () => {
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative md:h-170 h-140 w-full flex flex-col items-center justify-center overflow-hidden">
       
       {/* 1. Subtle Radial Background Glow - Optimized for Black BG */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,#fb923c10_0%,transparent_60%)] pointer-events-none" />
@@ -29,7 +29,7 @@ const Title = () => {
       </div>
 
       {/* 5. Main Subject Image (TOP GAP FIX HERE) */}
-      <div className="relative z-10 w-full max-w-[280px] sm:max-w-md md:max-w-xl lg:max-w-2xl  md:mt-20 flex justify-center">
+      <div className="relative z-10 w-full max-w-[380px] sm:max-w-md md:max-w-xl lg:max-w-2xl  md:mt-20 flex justify-center">
         <img 
           src="/kk.png" 
           alt="Kiran Portfolio" 
@@ -47,15 +47,15 @@ const Title = () => {
 
       {/* 7. Role/Title (Bottom Right) */}
       <div className="absolute bottom-[28%] md:bottom-[10%] right-4 md:right-12 lg:right-24 z-20 text-right pointer-events-none">
-        <h2 className="text-[5vw] md:text-[4vw] font-black text-white md:text-white leading-[0.9] tracking-tighter uppercase">
+        <h2 className="text-[5vw] md:text-[4vw] font-black  text-white md:text-white leading-[0.9] tracking-tighter uppercase">
           SOFTWARE <br /> DEVELOPER
         </h2>
       </div>
 
       {/* 8. Call to Action Buttons */}
-      <div className="absolute bottom-30 md:bottom-8 flex gap-4 z-40 scale-90 md:scale-100">
+      <div className="absolute bottom-25 md:bottom-8 flex gap-4 z-40 scale-90 md:scale-100">
         <a 
-          href="/kiran_Resumee.pdf" 
+          href="/Kiran_Rathod_resume_new.pdf" 
           className="p-4 bg-zinc-900 text-white border border-white/10 rounded-full hover:bg-white hover:text-black transition-all shadow-2xl"
         >
           <SiReaddotcv size={20} />

@@ -35,7 +35,7 @@ const SkillCard = ({ title, subtitle, icon, index }) => {
             alt={subtitle} 
             className="w-24 h-24 object-contain filter drop-shadow-[0_0_15px_rgba(0,0,0,0.5)] z-10"
           />
-          <h2 className="text-3xl font-black text-white mt-4 tracking-tighter uppercase group-hover:text-orange-400 transition-colors">
+          <h2 className="text-3xl font-bold text-white mt-4 tracking-tighter uppercase group-hover:text-orange-400 transition-colors">
             {subtitle}
           </h2>
         </div>

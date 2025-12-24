@@ -1,12 +1,12 @@
 import React from "react";
-import { Code2, Globe, Cpu, Palette, ExternalLink } from "lucide-react";
+import { Code2, Globe, Cpu, Palette, ExternalLink, Settings,  } from "lucide-react";
 
 const About = () => {
   const roles = [
     { title: "Full-Stack Developer", icon: <Code2 size={18} />, color: "from-blue-500/20" },
-    { title: "Next.js Specialist", icon: <Globe size={18} />, color: "from-orange-500/20" },
+    { title: "Next.js devloper", icon: <Globe size={18} />, color: "from-orange-500/20" },
     { title: "Web3 Enthusiast", icon: <Cpu size={18} />, color: "from-purple-500/20" },
-    { title: "UI/UX Designer", icon: <Palette size={18} />, color: "from-emerald-500/20" },
+    { title: "devOps", icon: <Settings size={18} />, color: "from-emerald-500/20" },
   ];
 
   return (
@@ -41,7 +41,7 @@ const About = () => {
         <div className="lg:col-span-7 flex flex-col gap-8">
           <div>
             <span className="text-orange-400 font-mono tracking-[0.2em] text-sm uppercase">01. Discovery</span>
-            <h2 className="text-white text-5xl md:text-7xl font-bold mt-2">
+            <h2 className="text-white text-5xl md:text-7xl  mt-2">
               Beyond the <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-orange-500">Pixels.</span>
             </h2>
           </div>

@@ -27,10 +27,21 @@ import E3 from "./E3.jpg"
 import E4 from "./E4.jpg"
 import E5 from "./E5.jpg"
 import E6 from "./E6.jpg"
+import T1 from "./T1.jpeg"
+import T2 from "./T2.jpeg"
+import T3 from "./T3.jpeg"
+import T4 from "./T4.jpeg"
+import T5 from "./T5.jpeg"
+import K1 from "./K1.jpeg"
+import K2 from "./K2.jpeg"
+import K3 from "./K3.jpeg"
+import K4 from "./K4.jpeg"
+import K5 from "./K5.jpeg"
+import K6 from "./K6.jpeg"
 
 export const images = {
   javascript, project01, L1, L2, Project2, proj1_im1, E2,E1,E3,E4,E5,E6,proj1_im2, Project3, img2_proj3, img2_proj4, img2_proj5, img2_proj6, img2_proj7,
-  proj2_img1, proj2_img2, proj2_img3, proj2_img4, proj2_img5, proj2_img6, proj2_img7, proj2_img8, proj2_img9, proj2_img10
+  proj2_img1, proj2_img2, proj2_img3, proj2_img4, proj2_img5, proj2_img6, proj2_img7, proj2_img8, proj2_img9, proj2_img10,T1
 }
 export const ProjectThambnel = [
   {
@@ -63,6 +74,20 @@ export const ProjectThambnel = [
     ]
   },
   {
+    name: "proj3",
+    projectName: " Education Platfrom",
+    themabaiimg: Project3
+    ,
+    tech: [
+      { techno: "React.js", },
+      { techno: "Tailwind CSS", },
+      { techno: "Node.js", },
+      { techno: "Express.js", },
+      { techno: "MongoDB (Mongoose)", },
+    ]
+    
+  },
+  {
     name: "proj2",
     projectName: "Grocery Web Application",
     themabaiimg: Project2
@@ -79,28 +104,31 @@ export const ProjectThambnel = [
     
   },
   {
-    name: "proj3",
-    projectName: " Education Platfrom",
-    themabaiimg: Project3
-    ,
+    name: "proj6",
+    projectName: "Twitter Architecture Clone",
+    themabaiimg: T1, // Assuming T1 is your Twitter thumbnail import
     tech: [
-      { techno: "React.js", },
-      { techno: "Tailwind CSS", },
-      { techno: "Node.js", },
-      { techno: "Express.js", },
-      { techno: "MongoDB (Mongoose)", },
+      { techno: "Next.js" },
+      { techno: "GraphQL" },
+      { techno: "Prisma.js" },
+      { techno: "Nodejs" },
+      { techno: "Expeesjs" },
+      { techno: "Kafka" },
+      { techno: "Redis" },
+      { techno: "PostgreSQL" },
+      { techno: "Socket.IO" }
     ]
-
   },
   {
     name: "proj5",
-    projectName: " FreeLancing E-Commers Platfrom",
-    themabaiimg: E2
+    projectName: "E-Commers Platfrom Kesula Mens Brand hub",
+    themabaiimg: K2
     ,
     tech: [
-      { techno: "Nextjs", },
+      { techno: "Recat", },
       { techno: "Tailwind CSS", },
       { techno: "Typescript", },
+      { techno: "Recat Query", },
       { techno: "MongoDB (Mongoose)", },
     ]
 
@@ -108,6 +136,69 @@ export const ProjectThambnel = [
 ]
 
 export const projetcs = [
+
+  {
+  name: "proj6",
+  tittle: "Twitter Clone – Social Media Platform",
+   github: "https://github.com/kiran04-code/QuickChats.com.git",
+    liveproject: "https://quickchats-com-5.onrender.com/",
+  description:
+    "This project is a full-stack Twitter clone built to replicate core social media features with a strong focus on scalability, real-time communication, and performance optimization for high-traffic usage.",
+ projectImage: [T1, T3,T4,T5,T2],
+ whybuild: [
+  { text: "To understand how large-scale social media platforms work" },
+  { text: "To build a real-world application with real-time communication" },
+  { text: "To implement scalable systems using Kafka and Redis" },
+  { text: "To improve skills in GraphQL, PostgreSQL, and backend performance optimization" }
+]
+,
+  keyfaeture: [
+    { text: "Google OAuth authentication" },
+    { text: "Follow and unfollow users" },
+    { text: "Create and post tweets" },
+    { text: "Real-time community messaging using Socket.IO" },
+    { text: "Scalable notifications and event streaming using Kafka" }
+  ],
+
+  techTASK: [
+    {
+      frontend: [
+        { text: "Next.js, React Query (TanStack)" }
+      ]
+    },
+    {
+      Backend: [
+        { text: "Node.js, Express.js" }
+      ]
+    },
+    {
+      API: [
+        { text: "GraphQL" }
+      ]
+    },
+    {
+      Database: [
+        { text: "PostgreSQL, Prisma ORM" }
+      ]
+    },
+    {
+      RealTime: [
+        { text: "Socket.IO" }
+      ]
+    },
+    {
+      Caching: [
+        { text: "Redis" }
+      ]
+    },
+    {
+      Messaging: [
+        { text: "Kafka" }
+      ]
+    }
+  ]
+}
+,
   {
     name: "proj1",
     tittle: "QuickChat – Real-Time Chat Application",
@@ -216,15 +307,16 @@ export const projetcs = [
   },
   {
     name: "proj5",
-    tittle: "Freelancing E-Commerce website",
-    description: "MaxxThrift is a Next.js-powered e-commerce platform offering a seamless shopping experience with secure checkout and real-time order tracking.",
-    liveproject: "https://www.maxxthrifts.shop/",
- whybuild: [
-  { text: "To make trendy and affordable fashion accessible to everyone" },
-  { text: "To provide a seamless online shopping experience with secure checkout" },
-  { text: "To offer a curated collection of quality clothing with modern designs" },
-  { text: "To integrate search, filters, and personalized recommendations for customers" }
+    tittle: "E-Commerce website",
+    description: "Kesula is a React.js-powered e-commerce platform offering a seamless shopping experience with secure checkout and real-time order tracking.",
+    liveproject: "https://kusala-threads.onrender.com",
+whybuild: [
+  { text: "To support my brother’s new clothing business by creating a strong online presence" },
+  { text: "To make trendy and affordable fashion easily accessible to customers" },
+  { text: "To provide a smooth and secure online shopping experience" },
+  { text: "To help the business grow with features like search, filters, and personalized recommendations" }
 ]
+
 ,
     keyfaeture: [
       { text: "Browers All Cloths " },
@@ -236,17 +328,18 @@ export const projetcs = [
       { text: "Scalable code architecture" },
       { text: "User-friendly interface for Owner, Users" }
     ],
-    projectImage: [E2, E3,E4,E5,E1,E6],
+    projectImage: [K1,K3,K4,K5,K2,K6],
     projectvIDEO: [],
     techTASK: [
       {
         frontend: [
-          { text: "Nextjs, Framer Motion" }
+          { text: "Reactjs, Framer Motion" }
         ]
       },
       {
         backend: [
-          { text: "Nextjs " }
+          { text: "Nodejs" },
+          { text: "Expressjs" }
         ]
       },
       
