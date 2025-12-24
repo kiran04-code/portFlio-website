@@ -1,72 +1,84 @@
 import React from "react";
 import { ProjectThambnel } from "../../assets/assets";
 import { useNavigate } from "react-router-dom";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
+import { MoveRight, Plus } from "lucide-react";
 
 const Project001 = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex justify-center items-center w-full rounded-2xl px-4 md:px-6 mt-3 md:mt-6">
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1, y: [40, 0] }}
-        transition={{ duration: 0.8 }}
-        className="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 p-6 bg-[#1a1a1a] rounded-2xl shadow-lg relative"
-      >
-        {ProjectThambnel.map((items, index) => (
-          <motion.div
-            key={index}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-            onClick={() => navigate(`/project/${items.name}`)}
-            className="bg-[#111] text-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition cursor-pointer flex flex-col border border-gray-800 group"
-          >
-            {/* Project Image */}
-            <div className="relative w-full h-48 overflow-hidden">
-              <img
-                src={items.themabaiimg}
-                alt={items.projectName}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-              <p className="absolute bottom-2 left-2 bg-orange-400 text-xs px-3 py-1 rounded-full">
-                Project
-              </p>
-            </div>
+    <div className="w-full py-20 px-4 md:px-10 ">
+      <div className="max-w-[1400px] mx-auto">
+        {/* Header with high-end typography */}
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div className="space-y-4">
+            <span className="text-orange-400 font-mono tracking-[0.3em] uppercase text-xs">Portfolio Showcase</span>
+            <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter">
+              Featured <span className="text-zinc-600 italic font-light">Artifacts.</span>
+            </h2>
+          </div>
+          <p className="text-zinc-500 max-w-xs text-sm leading-relaxed border-l border-zinc-800 pl-6">
+            A curated selection of full-stack applications and blockchain experiments developed at VIT Pune.
+          </p>
+        </div>
 
-            {/* Content */}
-            <div className="p-4 flex flex-col flex-grow space-y-3">
-              {/* Project Name */}
-              <h1 className="text-lg md:text-xl font-semibold leading-snug hover:text-orange-400 transition">
-                {items.projectName}
-              </h1>
-
-              {/* Tech Stack */}
-              <div className="flex flex-wrap gap-2 text-sm text-orange-400">
-                {items.tech.map((techItem, techIndex) => (
-                  <span
-                    key={techIndex}
-                    className="bg-zinc-800 px-2 py-1 rounded-md"
-                  >
-                    #{techItem.techno}
-                  </span>
-                ))}
+        {/* The Grid */}
+        <div className="grid grid-cols-12 gap-6">
+          {ProjectThambnel.map((items, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: index * 0.1 }}
+              onClick={() => navigate(`/project/${items.name}`)}
+              className={`relative group cursor-pointer overflow-hidden rounded-[2.5rem] bg-[#111] border border-white/5 
+                ${index === 0 ? "col-span-12 md:col-span-8 h-[500px]" : "col-span-12 md:col-span-4 h-[500px]"} 
+                ${index === 1 ? "md:col-span-4" : ""}
+              `}
+            >
+              {/* Image with Parallax-like Hover */}
+              <div className="absolute inset-0 z-0">
+                <img
+                  src={items.themabaiimg}
+                  alt={items.projectName}
+                  className="w-full h-full object-cover opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent"></div>
               </div>
 
-              {/* Button */}
-              <button className="mt-auto bg-gradient-to-r from-orange-300 to-orange-600 text-black font-semibold py-2 rounded-lg shadow-md hover:opacity-90 transition">
-                View Details
-              </button>
-            </div>
-          </motion.div>
-        ))}
+              {/* Floating Content */}
+              <div className="absolute inset-0 z-10 p-10 flex flex-col justify-between">
+                <div className="flex justify-between items-start">
+                  <div className="flex gap-2">
+                    {items.tech.map((t, i) => (
+                      <span key={i} className="px-3 py-1 bg-white/5 backdrop-blur-md border border-white/10 rounded-full text-[10px] text-zinc-300 uppercase tracking-widest">
+                        {t.techno}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:bg-orange-400 group-hover:text-black group-hover:border-orange-400 transition-all duration-500">
+                    <Plus size={24} className="group-hover:rotate-90 transition-transform duration-500" />
+                  </div>
+                </div>
 
-        {/* Side Quote */}
-        <h1 className="hidden md:block text-[40px] font-bold absolute right-4 bottom-4 bg-gradient-to-r from-gray-600 to-orange-400 bg-clip-text text-transparent">
-          Code. Create. Inspire.
-        </h1>
-      </motion.div>
+                <div className="space-y-4">
+                  <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight max-w-sm">
+                    {items.projectName}
+                  </h3>
+                  <div className="flex items-center gap-4 text-orange-400 font-semibold text-sm group-hover:gap-6 transition-all">
+                    <p>Explore Case Study</p>
+                    <MoveRight size={20} />
+                  </div>
+                </div>
+              </div>
+
+              {/* Glass Border Glow on Hover */}
+              <div className="absolute inset-0 border-[1px] border-orange-400/0 group-hover:border-orange-400/30 rounded-[2.5rem] transition-all duration-500"></div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

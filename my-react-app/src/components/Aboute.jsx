@@ -1,80 +1,83 @@
 import React from "react";
+import { Code2, Globe, Cpu, Palette, ExternalLink } from "lucide-react";
 
 const About = () => {
   const roles = [
-    "Full-Stack Developer",
-    "Next.js Developer",
-    "Web3 Enthusiast",
-    "UI/UX Enthusiast",
+    { title: "Full-Stack Developer", icon: <Code2 size={18} />, color: "from-blue-500/20" },
+    { title: "Next.js Specialist", icon: <Globe size={18} />, color: "from-orange-500/20" },
+    { title: "Web3 Enthusiast", icon: <Cpu size={18} />, color: "from-purple-500/20" },
+    { title: "UI/UX Designer", icon: <Palette size={18} />, color: "from-emerald-500/20" },
   ];
 
   return (
-    <div
-      className="w-full min-h-screen flex justify-center items-center relative px-4 py-10 md:py-24 z-[90] "
-      id="About"
-    >
-      <div className="w-full max-w-5xl bg-[#1e1e1f] p-10 md:p-10 border-1 border-dashed border-orange-300 shadow-2xl  transition-all duration-500">
-        <h1 className="text-orange-300 font-extrabold text-4xl sm:text-5xl mb-10 text-center">
-          Know <span className="text-white">About Me!</span>
-        </h1>
+    <section className="w-full min-h-screen flex items-center justify-center  py-20 px-6 overflow-hidden relative" id="About">
+      
+      {/* Background Ambient Glows */}
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-orange-500/10 blur-[120px] rounded-full"></div>
+      <div className="absolute bottom-1/4 -right-20 w-96 h-96 rounded-full"></div>
 
-        {/* Profession Badges - New Layout */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-10">
-          {roles.map((role, idx) => (
-            <div
-              key={idx}
-              className="bg-[#29292b] border border-orange-400 hover:bg-orange-300 hover:text-zinc-900 text-orange-300 font-semibold px-6 py-4 rounded-3xl shadow-lg flex items-center justify-center text-center transition-all duration-300 cursor-default"
-            >
-              {role}
+      <div className="max-w-6xl w-full grid lg:grid-cols-12 gap-12 items-center relative z-10">
+        
+        {/* LEFT SIDE: Decorative Image/Badge Area (4 Columns) */}
+        <div className="lg:col-span-5 relative group">
+          <div className="relative z-10 overflow-hidden rounded-[2.5rem] border border-white/10 bg-zinc-900/50 p-2">
+             <img 
+              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop" 
+              alt="Coding Workspace" 
+              className="rounded-[2rem] grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100 object-cover h-[500px] w-full"
+            />
+            {/* Overlay Info Card */}
+            <div className="absolute bottom-8 left-8 right-8 p-6 bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl">
+              <p className="text-orange-400 font-mono text-sm mb-1">Education</p>
+              <h4 className="text-white font-bold text-lg leading-tight">B.Tech in Computer Science</h4>
+              <p className="text-zinc-400 text-sm">VIT, Pune • 2nd Year Student</p>
             </div>
-          ))}
+          </div>
+          {/* Floating Geometric Element */}
+          <div className="absolute -top-6 -right-6 w-24 h-24 bg-orange-400 rounded-2xl -rotate-12 z-0 opacity-20 group-hover:rotate-0 transition-transform duration-500"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10">
-          {/* Left Section */}
-          <div className="flex flex-col justify-center gap-4">
-            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed mt-2">
-              Hi! I’m{" "}
-              <span className="text-orange-300 font-bold text-lg sm:text-xl">
-                Kiran Santosh Rathod
-              </span>
-              , a second-year Computer Science Engineering student at VIT, Pune.
+        {/* RIGHT SIDE: Content (7 Columns) */}
+        <div className="lg:col-span-7 flex flex-col gap-8">
+          <div>
+            <span className="text-orange-400 font-mono tracking-[0.2em] text-sm uppercase">01. Discovery</span>
+            <h2 className="text-white text-5xl md:text-7xl font-bold mt-2">
+              Beyond the <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-orange-500">Pixels.</span>
+            </h2>
+          </div>
+
+          <div className="space-y-6 text-zinc-400 text-lg leading-relaxed max-w-2xl">
+            <p>
+              Hi, I'm <span className="text-white font-semibold">Kiran Santosh Rathod</span>. I don't just write code; I architect digital experiences. Based in Pune, I spend my time pushing the boundaries of what's possible on the web.
             </p>
-            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed mt-2">
-              I love crafting clean, scalable, and efficient web applications that
-              merge functionality with modern design principles.
+            <p>
+              My expertise lies in the <span className="text-orange-300">MERN stack</span> and <span className="text-orange-300">Next.js</span>, with a growing obsession for the decentralized world of <span className="text-white font-medium underline underline-offset-8 decoration-orange-400/30">Web3 and Ethereum.</span>
             </p>
           </div>
 
-          <div className="flex flex-col justify-center gap-4">
-            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
-              I focus on{" "}
-              <span className="text-orange-300 font-semibold text-lg sm:text-xl">
-                Ethereum
-              </span>{" "}
-              and{" "}
-              <span className="text-orange-300 font-semibold text-lg sm:text-xl">
-                Web3 technologies
-              </span>
-              , building modern web applications with{" "}
-              <span className="text-orange-300 font-semibold text-lg sm:text-xl">
-                Next.js
-              </span>{" "}
-              and full-stack development.
-            </p>
-            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed mt-2">
-              I'm passionate about exploring decentralized apps, developing real-world{" "}
-              <span className="text-orange-300 font-semibold text-lg sm:text-xl">
-                Full-Stack Projects
-              </span>{" "}
-              and diving into the next-generation Web3 ecosystems.
-            </p>
+          {/* Role Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+            {roles.map((role, i) => (
+              <div 
+                key={i} 
+                className={`flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br ${role.color} to-transparent border border-white/5 hover:border-white/20 transition-all group`}
+              >
+                <div className="p-2 bg-zinc-800 rounded-lg text-orange-400 group-hover:scale-110 transition-transform">
+                  {role.icon}
+                </div>
+                <p className="text-zinc-200 font-medium">{role.title}</p>
+              </div>
+            ))}
           </div>
-        </div>
 
-        <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-orange-300 to-transparent mt-12 rounded-full"></div>
+          {/* Social Link Trigger */}
+          <button className="flex items-center gap-3 text-orange-300 hover:text-orange-400 transition-colors mt-4 font-medium group">
+            Check out my GitHub 
+            <ExternalLink size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          </button>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

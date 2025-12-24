@@ -1,133 +1,169 @@
 import React from "react";
-import { IoLogoJavascript, IoLogoReact } from "react-icons/io5";
-import { FaHtml5, FaCss3, FaNodeJs, FaGitAlt, FaGithub, FaDocker } from "react-icons/fa";
-import { SiExpress, SiRedux, SiTypescript, SiPostman, SiWebrtc } from "react-icons/si";
-import { BiLogoMongodb } from "react-icons/bi";
-import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
-import { GrGraphQl } from "react-icons/gr";
-import { TbBrandCpp } from "react-icons/tb";
+import { 
+  SiHtml5, SiCss3, SiCplusplus, SiSolidity, SiJavascript, SiTypescript, 
+  SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiExpress, 
+  SiGraphql, SiMongodb, SiPrisma, SiRedis, SiSocketdotio, 
+  SiWebrtc, SiDocker, SiKubernetes, SiGit, SiGithub, 
+  SiPostman, SiAmazonec2, SiWeb3Dotjs, SiEthereum 
+} from "react-icons/si";
+import { TbApi } from "react-icons/tb";
 
-const skills = [
-  { icon: <FaHtml5 />, name: "HTML" },
-  { icon: <FaCss3 />, name: "CSS" },
-  { icon: <IoLogoJavascript />, name: "JavaScript" },
-  { icon: <TbBrandCpp />, name: "C++" },
-  { icon: <SiTypescript />, name: "TypeScript" },
-  { icon: <IoLogoReact />, name: "React" },
-  { icon: <RiNextjsFill />, name: "Next.js" },
-  { icon: <FaNodeJs />, name: "Node.js" },
-  { icon: <SiExpress />, name: "Express" },
-  { icon: <BiLogoMongodb />, name: "MongoDB" },
+const SkillOrbit = () => {
+  const tiers = [
+    {
+      id: "inner",
+      radius: "280px",
+      duration: "20s",
+      skills: [
+        { icon: <SiReact className="text-[#61DAFB]" />, name: "React.js" },
+        { icon: <SiNextdotjs className="text-[#000000]" />, name: "Next.js" },
+        { icon: <SiTailwindcss className="text-[#06B6D4]" />, name: "Tailwind CSS" },
+        { icon: <SiTypescript className="text-[#3178C6]" />, name: "TypeScript" },
+        { icon: <SiJavascript className="text-[#F7DF1E]" />, name: "JavaScript" },
+        { icon: <SiNodedotjs className="text-[#339933]" />, name: "Node.js" },
+      ],
+    },
+    {
+      id: "middle",
+      radius: "500px",
+      duration: "35s",
+      reverse: true,
+      skills: [
+        { icon: <SiExpress className="text-[#000000]" />, name: "Express.js" },
+        { icon: <SiMongodb className="text-[#47A248]" />, name: "MongoDB" },
+        { icon: <SiPrisma className="text-[#2D3748]" />, name: "Prisma ORM" },
+        { icon: <SiRedis className="text-[#DC382D]" />, name: "Redis" },
+        { icon: <SiGraphql className="text-[#E10098]" />, name: "GraphQL" },
+        { icon: <TbApi className="text-[#0081CB]" />, name: "REST APIs" },
+        { icon: <SiSocketdotio className="text-[#010101]" />, name: "Socket.IO" },
+        { icon: <SiWebrtc className="text-[#333333]" />, name: "WebRTC" },
+        { icon: <SiReact className="text-[#61DAFB]" />, name: "React Native" },
+      ],
+    },
+    {
+      id: "outer",
+      radius: "750px",
+      duration: "50s",
+      skills: [
+        { icon: <SiHtml5 className="text-[#E34F26]" />, name: "HTML5" },
+        { icon: <SiCss3 className="text-[#1572B6]" />, name: "CSS3" },
+        { icon: <SiCplusplus className="text-[#00599C]" />, name: "C++" },
+        { icon: <SiSolidity className="text-[#363636]" />, name: "Solidity" },
+        { icon: <SiDocker className="text-[#2496ED]" />, name: "Docker" },
+        { icon: <SiKubernetes className="text-[#326CE5]" />, name: "Kubernetes" },
+        { icon: <SiGit className="text-[#F05032]" />, name: "Git" },
+        { icon: <SiGithub className="text-[#181717]" />, name: "GitHub" },
+        { icon: <SiPostman className="text-[#FF6C37]" />, name: "Postman" },
+        { icon: <SiAmazonec2 className="text-[#FF9900]" />, name: "EC2" },
+         { icon: <SiReact className="text-[#61DAFB]" />, name: "React.js" },
+        { icon: <SiNextdotjs className="text-[#000000]" />, name: "Next.js" },
+        { icon: <SiTailwindcss className="text-[#06B6D4]" />, name: "Tailwind CSS" },
+        { icon: <SiTypescript className="text-[#3178C6]" />, name: "TypeScript" },
+        { icon: <SiJavascript className="text-[#F7DF1E]" />, name: "JavaScript" },
+        { icon: <SiNodedotjs className="text-[#339933]" />, name: "Node.js" },
+        { icon: <SiWeb3Dotjs className="text-[#F16822]" />, name: "Web3" },
+        { icon: <SiEthereum className="text-[#3C3C3D]" />, name: "Etherjs" },
+      ],
+    },
+  ];
 
-];
-
-const Footer = () => {
-  const chunked = [];
-  for (let i = 0; i < skills.length; i += 5) {
-    chunked.push(skills.slice(i, i + 5));
-  }
   return (
-    <div className="relative w-full py-6 space-y-10" id="Skills" >
-      {chunked.map((row, rowIndex) => (
-        <div key={rowIndex} className="relative">
+    <section className="relative w-full py-5 min-h-[800px] overflow-hidden flex flex-col items-center " id="Skills">
+      {/* Background Decorative Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none bg-[#f8916221]" />
 
-          <div className="grid grid-cols-5 gap-6 justify-items-center relative z-[90] p-3">
-            {row.map((skill, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center bg-black text-orange-300 md:text-4xl p-3 border-2 border-orange-300 rounded-4xl z-[90]"
-              >
-                {skill.icon}
-              </div>
-            ))}
+      {/* Orbit Container */}
+      <div className="relative w-full max-w-[1500px] h-[700px] flex justify-center items-center mt-10">
+        
+        {tiers.map((tier) => (
+          <div
+            key={tier.id}
+            className="absolute rounded-full border border-slate-200/60 transition-all duration-700"
+            style={{
+              width: tier.radius,
+              height: tier.radius,
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+            }}
+          >
+            {/* The Rotating Ring */}
+            <div
+              className={`relative w-full h-full rounded-full animate-orbit ${tier.reverse ? 'direction-reverse' : ''}`}
+              style={{ '--duration': tier.duration }}
+            >
+              {tier.skills.map((skill, index) => (
+                <div
+                  key={index}
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                  style={{
+                    transform: `
+                      rotate(${(360 / tier.skills.length) * index}deg) 
+                      translateY(calc(-${tier.radius} / 2))
+                    `,
+                  }}
+                >
+                  {/* Counter-rotating icon so it stays upright */}
+                  <div className="animate-orbit-reverse group relative" style={{ '--duration': tier.duration }}>
+                    <div className="bg-white p-3 md:p-4 rounded-full shadow-lg border border-slate-100 text-2xl md:text-3xl flex items-center justify-center transition-all duration-300 hover:scale-125 hover:shadow-2xl hover:border-blue-200 cursor-pointer">
+                      {skill.icon}
+                    </div>
+                    {/* Tooltip */}
+                    <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
+                      {skill.name}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
+        ))}
 
-          <div
-            className="absolute md:top-10  top-9 -bottom-4 left-0 w-full h-0.5 -z-[90]"
-            style={{
-              background:
-                "linear-gradient(to right, transparent, #fb923c, #fb923c, transparent)",
-            }}
-          ></div>
-        </div>
-      ))}
-      <div className="flex flex-col md:flex-row md:px-25 gap-10 md:gap-15 justify-evenly w-full py-10">
-
-        <div className="relative grid grid-cols-4 md:px-0 px-3 md:grid-cols-2 gap-x-10 md:gap-x-55 gap-y-6 md:gap-y-0 mr-0 md:mr-7">
-          <div
-            className=" md:block absolute w-full top-8 left-0 md:w-[37vw] h-0.5 -z-[80] -translate-y-1/2"
-            style={{
-              background:
-                "linear-gradient(to right, transparent, #fb923c, #fb923c, transparent)",
-            }}
-          ></div>
-
-          {[SiRedux, RiTailwindCssFill, SiPostman, GrGraphQl].map((Icon, i) => (
-            <div
-              key={i}
-              className="relative flex items-center justify-center w-14 h-14 md:w-16 md:h-16 z-[90] bg-black text-orange-300 border-2 border-orange-300 rounded-full text-2xl md:text-3xl"
-            >
-              <Icon />
-            </div>
-          ))}
-        </div>
-        <div className="md:hidden  relative grid grid-cols-4 px-3 md:grid-cols-2 gap-x-10 md:gap-x-55 gap-y-6 md:gap-y-0 mr-0 md:mr-7 mt-8 md:mt-0">
-          {/* Line for right side (hidden on mobile) */}
-          <div
-            className=" md:block absolute w-full top-8 right-0 md:w-[35vw] h-0.5 -z-[80] -translate-y-1/2"
-            style={{
-              background:
-                "linear-gradient(to right, transparent, #fb923c, #fb923c, transparent)",
-            }}
-          ></div>
-
-          {[FaGitAlt, FaGithub, FaDocker, SiWebrtc].map((Icon, i) => (
-            <div
-              key={i}
-              className="relative flex items-center justify-center w-14 h-14 md:w-16 md:h-16 z-[90] bg-black text-orange-300 border-2 border-orange-300 rounded-full text-2xl md:text-3xl"
-            >
-              <Icon />
-            </div>
-          ))}
-        </div>
-        {/* Middle Image + Text */}
-        <div className="text-center px-4 md:px-10 relative bottom-0 md:bottom-11 mt-8 md:mt-0">
-          <div className="flex justify-center items-center mb-4">
-            <img src="/Gemini_Generated_Image_tpj19dtpj19dtpj1-removebg-preview.png" alt="stack" className="w-48 md:w-45" />
+        {/* Central Character/Avatar - Perfectly Centered */}
+        <div className="relative z-20  flex items-center justify-center">
+          <div className="w-40 p-5 h-40 flex items-center justify-center  md:w-100 md:h-105 rounded-full overflow-hidden border-8 border-white shadow-2xl relative bg-white">
+            <img
+              src="/Gemini_Generated_Image_tpj19dtpj19dtpj1-removebg-preview.png"
+              alt="Avatar"
+              className="w-[90%] h-[100%] object-cover"
+            />
+            <div className="absolute inset-0 bg-blue-500/5 hover:bg-transparent transition-colors" />
           </div>
-          <h1 className="text-xl md:text-2xl font-bold text-orange-300">
-            Stack & Skills
-          </h1>
-        </div>
-        <p className="text-center md:hidden ">These are some of my tech skills, check out my github profile to learn more</p>
-       
-        <div className=" hidden  relative md:grid px-3  md:px-0 md:grid-cols-2 gap-x-10 md:gap-x-55 gap-y-6 md:gap-y-0 mr-0 md:mr-7 mt-8 md:mt-0">
-  
-          <div
-            className=" md:block absolute w-full top-8 right-0 md:w-[35vw] h-0.5 -z-[80] -translate-y-1/2"
-            style={{
-              background:
-                "linear-gradient(to right, transparent, #fb923c, #fb923c, transparent)",
-            }}
-          ></div>
-
-          {[FaGitAlt, FaGithub, FaDocker, SiWebrtc].map((Icon, i) => (
-            <div
-              key={i}
-              className="relative flex items-center justify-center w-14 h-14 md:w-16 md:h-16 z-[90] bg-black text-orange-300 border-2 border-orange-300 rounded-full text-2xl md:text-3xl"
-            >
-              <Icon />
-            </div>
-          ))}
         </div>
       </div>
-        <div className="flex justify-center">
-          <div className=" flex justify-center absolute bottom-20">
-           <p className=" md:flex hidden mb-10 relative text-center ">These are some of my tech skills, check out my github profile to learn more</p>
-        </div>
-        </div>
-    </div>
+
+      {/* Header Content */}
+      <div className="text-center z-30 py-15 px-6">
+        <h2 className="text-5xl font-extrabold tracking-tight text-white mb-4">
+          Technical <span className="text-[#F16822] ">Ecosystem</span>
+        </h2>
+        <p className="text-slate-500 text-lg max-w-xl mx-auto leading-relaxed">
+          A visualization of my current tech stack. Hover over any icon to explore or visit my
+          <a href="#" className="ml-1 text-[#F16822] font-medium hover:underline">GitHub</a>.
+        </p>
+      </div>
+
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        @keyframes orbit {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-orbit {
+          animation: orbit var(--duration) linear infinite;
+        }
+        .animate-orbit-reverse {
+          animation: orbit var(--duration) linear infinite reverse;
+        }
+        .direction-reverse {
+          animation-direction: reverse;
+        }
+        .animate-orbit:hover, .animate-orbit:hover .animate-orbit-reverse {
+          animation-play-state: paused;
+        }
+      `}} />
+    </section>
   );
 };
 
-export default Footer;
+export default SkillOrbit;

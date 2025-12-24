@@ -14,6 +14,7 @@ import Animation2 from './components/animation2'
 import Footer3 from './components/Footer3'
 import Project from './components/project'
 import { motion, useScroll } from "motion/react"
+import SkillOrbit from './components/footer'
 
 function App() {
   const [showContent, setShowContent] = useState(false)
@@ -41,20 +42,16 @@ function App() {
           <Navbar />
           <Title />
 
-
-
           {/* Top-right image */}
           <img
             src="/background-S4EJ6pKPdfdf.png" // <-- Replace this with your image path
             alt="top right"
             className="absolute md:top-0 md:right-0 top-25   w-[500vw]" // adjust size as needed
           />
-
-     
           <About />
           <Project />
           <Stack />
-          <Footer />
+          <SkillOrbit />
           <Footer2 />
           <Footer3 />
         </>

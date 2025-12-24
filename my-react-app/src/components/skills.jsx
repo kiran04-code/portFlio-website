@@ -13,6 +13,8 @@ import { RiNextjsFill } from "react-icons/ri";
 const Skills = () => {
   const skills = [
     { icon: <FaHtml5 />, name: "HTML", effect: "hover:-translate-y-2" },
+    { icon: <FaHtml5 />, name: "HTML", effect: "hover:-translate-y-2" },
+    { icon: <FaHtml5 />, name: "HTML", effect: "hover:-translate-y-2" },
     { icon: <FaCss3 />, name: "CSS", effect: "hover:rotate-6" },
     { icon: <IoLogoJavascript />, name: "JavaScript", effect: "hover:scale-110" },
     { icon: <SiTypescript />, name: "Typescript", effect: "hover:scale-110" },
