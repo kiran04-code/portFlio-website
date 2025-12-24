@@ -134,7 +134,7 @@ const SkillOrbit = () => {
 
       {/* Header Content */}
       <div className="text-center z-30 py-15 px-6">
-        <h2 className="text-5xl font-extrabold tracking-tight text-white mb-4">
+        <h2 className="text-5xl font-bold tracking-tight text-white mb-4">
           Technical <span className="text-[#F16822] ">Ecosystem</span>
         </h2>
         <p className="text-slate-500 text-lg max-w-xl mx-auto leading-relaxed">
