@@ -1,6 +1,7 @@
 import React from "react";
 import { SiReaddotcv } from "react-icons/si";
 import { MdContactEmergency } from "react-icons/md";
+import { motion } from "motion/react";
 
 const Title = () => {
   return (
@@ -29,13 +30,21 @@ const Title = () => {
       </div>
 
       {/* 5. Main Subject Image (TOP GAP FIX HERE) */}
-      <div className="relative z-10 w-full max-w-[380px] sm:max-w-md md:max-w-xl lg:max-w-2xl  md:mt-20 flex justify-center">
-        <img 
-          src="/kk.png" 
-          alt="Kiran Portfolio" 
-          className="w-full h-auto object-contain brightness-110 drop-shadow-[0_0_30px_rgba(251,146,60,0.1)]" 
-        />
-      </div>
+    <div className="relative z-10 w-full max-w-[90vw] sm:max-w-[500px] md:max-w-xl lg:max-w-2xl mt-10 md:mt-20 flex justify-center mx-auto">
+  <motion.img 
+    initial={{ opacity: 0, scale: 0.9 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+    src="/kk.png" 
+    alt="Kiran Portfolio" 
+    // w-[110%] on mobile allows the image to feel "larger than life"
+    className="w-[125%] sm:w-full h-auto object-contain brightness-110 
+               drop-shadow-[0_0_40px_rgba(251,146,60,0.15)] 
+               hover:drop-shadow-[0_0_60px_rgba(251,146,60,0.25)] 
+               transition-all duration-700" 
+  />
+  
+</div>
 
       {/* 6. Bold Name Overlap (Bottom Left) */}
       <div className="absolute bottom-[30%] md:bottom-[0%] left-4 md:left-12 lg:left-24 z-20 pointer-events-none">

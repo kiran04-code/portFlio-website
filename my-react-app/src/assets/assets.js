@@ -125,10 +125,10 @@ export const ProjectThambnel = [
     themabaiimg: K2
     ,
     tech: [
-      { techno: "Recat", },
+      { techno: "Reactjs", },
       { techno: "Tailwind CSS", },
       { techno: "Typescript", },
-      { techno: "Recat Query", },
+      { techno: "Reactjs Query", },
       { techno: "MongoDB (Mongoose)", },
     ]
 
@@ -140,8 +140,7 @@ export const projetcs = [
   {
   name: "proj6",
   tittle: "Twitter Clone – Social Media Platform",
-   github: "https://github.com/kiran04-code/QuickChats.com.git",
-    liveproject: "https://quickchats-com-5.onrender.com/",
+    liveproject: "https://twitter-frontend-gamma-three.vercel.app/",
   description:
     "This project is a full-stack Twitter clone built to replicate core social media features with a strong focus on scalability, real-time communication, and performance optimization for high-traffic usage.",
  projectImage: [T1, T3,T4,T5,T2],

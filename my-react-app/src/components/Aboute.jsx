@@ -6,7 +6,7 @@ const About = () => {
     { title: "Full-Stack Developer", icon: <Code2 size={18} />, color: "from-blue-500/20" },
     { title: "Next.js devloper", icon: <Globe size={18} />, color: "from-orange-500/20" },
     { title: "Web3 Enthusiast", icon: <Cpu size={18} />, color: "from-purple-500/20" },
-    { title: "devOps", icon: <Settings size={18} />, color: "from-emerald-500/20" },
+    { title: "DevOps", icon: <Settings size={18} />, color: "from-emerald-500/20" },
   ];
 
   return (
