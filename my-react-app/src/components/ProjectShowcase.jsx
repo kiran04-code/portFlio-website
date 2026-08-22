@@ -13,19 +13,8 @@ const ProjectShowcase = () => {
 
   const projectsList = [
     {
-      id: "proj1",
-      number: "01",
-      title: "Twitter Microservices Architecture",
-      category: "Distributed Social Platform",
-      tagline: "Scalable full-stack social ecosystem featuring JWT authentication, media pipelines, follow mechanics, and Redis caching.",
-      tech: ["Node.js", "Express.js", "MongoDB", "Redis", "Cloudinary", "Tailwind CSS"],
-      image: images.proj1_im1 || images.project01,
-      live: null,
-      github: "https://github.com/kiran04-code/Twitter-Backend",
-    },
-    {
       id: "proj2",
-      number: "02",
+      number: "01",
       title: "QuickChat Real-Time Messenger",
       category: "Real-Time Systems",
       tagline: "Bi-directional WebSocket messaging platform with Zustand state, online status tracking, and end-to-end media sharing.",
@@ -36,7 +25,7 @@ const ProjectShowcase = () => {
     },
     {
       id: "proj3",
-      number: "03",
+      number: "02",
       title: "HealthShield Telehealth Hub",
       category: "Healthcare Infrastructure",
       tagline: "Centralized medical platform with role-based dashboard access, encrypted health records, and dynamic appointment scheduling.",
@@ -47,7 +36,7 @@ const ProjectShowcase = () => {
     },
     {
       id: "proj4",
-      number: "04",
+      number: "03",
       title: "Kesula Threads Apparel Hub",
       category: "E-Commerce Engineering",
       tagline: "Modern high-performance apparel retail engine with catalog filtering, secure checkout flows, and administrative inventory controls.",
@@ -58,7 +47,7 @@ const ProjectShowcase = () => {
     },
     {
       id: "proj5",
-      number: "05",
+      number: "04",
       title: "VITAcademic Portal",
       category: "Educational Infrastructure",
       tagline: "Student-led centralized academic platform organizing courseware, unit question banks, and handwritten notes for VIT Pune.",
