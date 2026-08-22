@@ -1,169 +1,103 @@
 import React from "react";
-import { 
-  SiHtml5, SiCss3, SiCplusplus, SiSolidity, SiJavascript, SiTypescript, 
-  SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiExpress, 
-  SiGraphql, SiMongodb, SiPrisma, SiRedis, SiSocketdotio, 
-  SiWebrtc, SiDocker, SiKubernetes, SiGit, SiGithub, 
-  SiPostman, SiAmazonec2, SiWeb3Dotjs, SiEthereum 
-} from "react-icons/si";
-import { TbApi } from "react-icons/tb";
+import { ArrowUp, Github, Linkedin, Mail, FileText, Globe, Heart } from "lucide-react";
 
-const SkillOrbit = () => {
-  const tiers = [
-    {
-      id: "inner",
-      radius: "280px",
-      duration: "20s",
-      skills: [
-        { icon: <SiReact className="text-[#61DAFB]" />, name: "React.js" },
-        { icon: <SiNextdotjs className="text-[#000000]" />, name: "Next.js" },
-        { icon: <SiTailwindcss className="text-[#06B6D4]" />, name: "Tailwind CSS" },
-        { icon: <SiTypescript className="text-[#3178C6]" />, name: "TypeScript" },
-        { icon: <SiJavascript className="text-[#F7DF1E]" />, name: "JavaScript" },
-        { icon: <SiNodedotjs className="text-[#339933]" />, name: "Node.js" },
-      ],
-    },
-    {
-      id: "middle",
-      radius: "500px",
-      duration: "35s",
-      reverse: true,
-      skills: [
-        { icon: <SiExpress className="text-[#000000]" />, name: "Express.js" },
-        { icon: <SiMongodb className="text-[#47A248]" />, name: "MongoDB" },
-        { icon: <SiPrisma className="text-[#2D3748]" />, name: "Prisma ORM" },
-        { icon: <SiRedis className="text-[#DC382D]" />, name: "Redis" },
-        { icon: <SiGraphql className="text-[#E10098]" />, name: "GraphQL" },
-        { icon: <TbApi className="text-[#0081CB]" />, name: "REST APIs" },
-        { icon: <SiSocketdotio className="text-[#010101]" />, name: "Socket.IO" },
-        { icon: <SiWebrtc className="text-[#333333]" />, name: "WebRTC" },
-        { icon: <SiReact className="text-[#61DAFB]" />, name: "React Native" },
-      ],
-    },
-    {
-      id: "outer",
-      radius: "750px",
-      duration: "50s",
-      skills: [
-        { icon: <SiHtml5 className="text-[#E34F26]" />, name: "HTML5" },
-        { icon: <SiCss3 className="text-[#1572B6]" />, name: "CSS3" },
-        { icon: <SiCplusplus className="text-[#00599C]" />, name: "C++" },
-        { icon: <SiSolidity className="text-[#363636]" />, name: "Solidity" },
-        { icon: <SiDocker className="text-[#2496ED]" />, name: "Docker" },
-        { icon: <SiKubernetes className="text-[#326CE5]" />, name: "Kubernetes" },
-        { icon: <SiGit className="text-[#F05032]" />, name: "Git" },
-        { icon: <SiGithub className="text-[#181717]" />, name: "GitHub" },
-        { icon: <SiPostman className="text-[#FF6C37]" />, name: "Postman" },
-        { icon: <SiAmazonec2 className="text-[#FF9900]" />, name: "EC2" },
-         { icon: <SiReact className="text-[#61DAFB]" />, name: "React.js" },
-        { icon: <SiNextdotjs className="text-[#000000]" />, name: "Next.js" },
-        { icon: <SiTailwindcss className="text-[#06B6D4]" />, name: "Tailwind CSS" },
-        { icon: <SiTypescript className="text-[#3178C6]" />, name: "TypeScript" },
-        { icon: <SiJavascript className="text-[#F7DF1E]" />, name: "JavaScript" },
-        { icon: <SiNodedotjs className="text-[#339933]" />, name: "Node.js" },
-        { icon: <SiWeb3Dotjs className="text-[#F16822]" />, name: "Web3" },
-        { icon: <SiEthereum className="text-[#3C3C3D]" />, name: "Etherjs" },
-      ],
-    },
-  ];
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
-    <section className="relative w-full py-5 min-h-[800px] overflow-hidden flex flex-col items-center " id="Skills">
-      {/* Background Decorative Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none bg-[#f8916221]" />
+    <footer className="relative bg-black text-white pt-28 pb-12 px-6 md:px-12 border-t border-white/[0.08] overflow-hidden select-none">
+      {/* Subtle background ambient light */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[30vh] bg-white/[0.02] rounded-full blur-[140px] pointer-events-none" />
 
-      {/* Orbit Container */}
-      <div className="relative w-full max-w-[1500px] h-[700px] flex justify-center items-center mt-10">
+      <div className="max-w-[1440px] mx-auto flex flex-col justify-between relative z-10">
         
-        {tiers.map((tier) => (
-          <div
-            key={tier.id}
-            className="absolute rounded-full border border-slate-200/60 transition-all duration-700"
-            style={{
-              width: tier.radius,
-              height: tier.radius,
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-            }}
-          >
-            {/* The Rotating Ring */}
-            <div
-              className={`relative w-full h-full rounded-full animate-orbit ${tier.reverse ? 'direction-reverse' : ''}`}
-              style={{ '--duration': tier.duration }}
-            >
-              {tier.skills.map((skill, index) => (
-                <div
-                  key={index}
-                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-                  style={{
-                    transform: `
-                      rotate(${(360 / tier.skills.length) * index}deg) 
-                      translateY(calc(-${tier.radius} / 2))
-                    `,
-                  }}
-                >
-                  {/* Counter-rotating icon so it stays upright */}
-                  <div className="animate-orbit-reverse group relative" style={{ '--duration': tier.duration }}>
-                    <div className="bg-white p-3 md:p-4 rounded-full shadow-lg border border-slate-100 text-2xl md:text-3xl flex items-center justify-center transition-all duration-300 hover:scale-125 hover:shadow-2xl hover:border-blue-200 cursor-pointer">
-                      {skill.icon}
-                    </div>
-                    {/* Tooltip */}
-                    <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
-                      {skill.name}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
+        {/* Top Information Section */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16 border-b border-white/[0.08] pb-12">
+          <div className="space-y-3">
+            <span className="text-xs font-mono uppercase tracking-[0.3em] text-zinc-500">
+              Creative Engineering Archive // Index
+            </span>
+            <h3 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase font-display tracking-tight text-white">
+              KIRAN RATHOD<span className="text-zinc-600">.</span>
+            </h3>
+            <p className="text-xs font-mono text-zinc-400">
+              FULL-STACK DEVELOPER & DEVOPS ENGINEER • VIT PUNE CS
+            </p>
           </div>
-        ))}
 
-        {/* Central Character/Avatar - Perfectly Centered */}
-        <div className="relative z-20  flex items-center justify-center">
-          <div className="w-40 p-5 h-40 flex items-center justify-center  md:w-100 md:h-105 rounded-full overflow-hidden border-8 border-white shadow-2xl relative bg-white">
-            <img
-              src="/Gemini_Generated_Image_tpj19dtpj19dtpj1-removebg-preview.png"
-              alt="Avatar"
-              className="w-[90%] h-[100%] object-cover"
-            />
-            <div className="absolute inset-0 bg-blue-500/5 hover:bg-transparent transition-colors" />
+          <div className="flex items-center gap-4">
+            <a
+              href="https://github.com/kiran04-code"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="open"
+              className="p-3.5 rounded-2xl bg-white/[0.04] border border-white/10 text-zinc-300 hover:text-black hover:bg-white hover:border-white transition-all duration-300 shadow-xl"
+              title="GitHub"
+            >
+              <Github size={18} />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/kiran-rathod-66b009331"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="open"
+              className="p-3.5 rounded-2xl bg-white/[0.04] border border-white/10 text-zinc-300 hover:text-black hover:bg-white hover:border-white transition-all duration-300 shadow-xl"
+              title="LinkedIn"
+            >
+              <Linkedin size={18} />
+            </a>
+
+            <a
+              href="/Kiran_Rathod_resume_new.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="open"
+              className="p-3.5 rounded-2xl bg-white/[0.04] border border-white/10 text-zinc-300 hover:text-black hover:bg-white hover:border-white transition-all duration-300 shadow-xl"
+              title="Resume PDF"
+            >
+              <FileText size={18} />
+            </a>
+
+            <button
+              onClick={scrollToTop}
+              data-cursor="pointer"
+              className="p-3.5 rounded-2xl bg-white text-black hover:bg-zinc-200 transition-all duration-300 flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.25)]"
+              title="Back to Top"
+            >
+              <ArrowUp size={18} />
+            </button>
           </div>
         </div>
-      </div>
 
-      {/* Header Content */}
-      <div className="text-center z-30 py-15 px-6">
-        <h2 className="text-5xl font-bold tracking-tight text-white mb-4">
-          Technical <span className="text-[#F16822] ">Ecosystem</span>
-        </h2>
-        <p className="text-slate-500 text-lg max-w-xl mx-auto leading-relaxed">
-          A visualization of my current tech stack. Hover over any icon to explore or visit my
-          <a href="#" className="ml-1 text-[#F16822] font-medium hover:underline">GitHub</a>.
-        </p>
-      </div>
+        {/* Monumental Interactive Signature Typography */}
+        <div className="my-8 select-none overflow-hidden">
+          <h2 className="text-[14vw] font-black uppercase font-display text-stroke-subtle hover:text-white transition-colors duration-700 leading-none text-center tracking-tighter">
+            KIRAN.DEV
+          </h2>
+        </div>
 
-      <style dangerouslySetInnerHTML={{
-        __html: `
-        @keyframes orbit {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        .animate-orbit {
-          animation: orbit var(--duration) linear infinite;
-        }
-        .animate-orbit-reverse {
-          animation: orbit var(--duration) linear infinite reverse;
-        }
-        .direction-reverse {
-          animation-direction: reverse;
-        }
-        .animate-orbit:hover, .animate-orbit:hover .animate-orbit-reverse {
-          animation-play-state: paused;
-        }
-      `}} />
-    </section>
+        {/* Bottom Metadata Bar */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-6 pt-12 border-t border-white/[0.06] text-xs font-mono text-zinc-500 uppercase tracking-widest">
+          <p>© {currentYear} Kiran Rathod. All Rights Reserved.</p>
+          
+          <div className="flex items-center gap-6">
+            <span className="flex items-center gap-2 text-zinc-400">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              Available for Opportunities
+            </span>
+            <span className="hidden md:inline text-zinc-800">|</span>
+            <span className="hidden md:inline text-zinc-600">Pune, India // UTC+05:30</span>
+          </div>
+        </div>
+
+      </div>
+    </footer>
   );
 };
 
-export default SkillOrbit;
+export default Footer;

@@ -1,69 +1,56 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import Reloader from './components/reloader'
-import Title from './components/title'
-import Navbar from './components/navbar'
-import Skills from "./components/skills"
-import About from "./components/Aboute"
-import ContactMe from "./components/contact"
-import Footer from './components/footer'
-import Footer2 from './components/footer2'
-import Stack from './components/stack'
-import Animations from "./components/animation"
-import Animation2 from './components/animation2'
-import Footer3 from './components/Footer3'
-import Project from './components/project'
-import { motion, useScroll } from "motion/react"
-import SkillOrbit from './components/footer'
+import React, { useState } from "react";
+import "./App.css";
+import SmoothScroll from "./components/SmoothScroll";
+import CustomCursor from "./components/CustomCursor";
+import Reloader from "./components/reloader";
+import Navbar from "./components/navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import KhanaavalStory from "./components/KhanaavalStory";
+import Experience from "./components/Experience";
+import ProjectShowcase from "./components/ProjectShowcase";
+import TechUniverse from "./components/TechUniverse";
+import ContactSection from "./components/ContactSection";
+import Footer from "./components/Footer";
 
 function App() {
-  const [showContent, setShowContent] = useState(false)
-  const { scrollYProgress } = useScroll()
-
-
-  useEffect(() => {
-    // We check session storage here too to skip the 3s delay if they've seen it
-    const hasSeen = sessionStorage.getItem("hasSeenLoader");
-    
-    if (hasSeen) {
-      setShowContent(true);
-    } else {
-      const timer = setTimeout(() => {
-        setShowContent(true);
-      }, 3500); // Slightly longer than the loader progress
-      return () => clearTimeout(timer);
-    }
-  }, []);
+  const [loaderComplete, setLoaderComplete] = useState(false);
 
   return (
-    <div className="w-full h-screen bg-black text-white relative">
-      <Reloader />
-      {showContent && (
-        <>
-          <motion.div
-            style={{ scaleX: scrollYProgress }}
-            className="w-full bg-gradient-to-l z-200 fixed from-orange-300 to-orange-900 h-3"
-          ></motion.div>
+    <SmoothScroll>
+      <div className="portfolio-root bg-black text-white selection:bg-white selection:text-black">
+        <Reloader onComplete={() => setLoaderComplete(true)} />
+        <CustomCursor />
+        <Navbar />
 
+        <main>
+          {/* 1. Cinematic Hero with Monumental Typography & Parallax Portrait */}
+          <Hero />
 
-          <Navbar />
-          <Title />
-
-          {/* Top-right image */}
-          <img
-            src="/background-S4EJ6pKPdfdf.png" // <-- Replace this with your image path
-            alt="top right"
-            className="absolute md:top-0 md:right-0 top-25   w-[500vw]" // adjust size as needed
-          />
+          {/* 2. Engineering Biography & Technical Philosophy */}
           <About />
-          <Project />
-          <Stack />
-          <SkillOrbit />
-          <Footer3 />
-        </>
-      )}
-    </div>
-  )
+
+          {/* 3. Flagship Production Case Study: Khanaaval.com */}
+          <KhanaavalStory />
+
+          {/* 4. Professional Industry Experience Timeline */}
+          <Experience />
+
+          {/* 5. Editorial Selected Projects Archive */}
+          <ProjectShowcase />
+
+          {/* 6. Interactive Technical Universe / Skills Ecosystem */}
+          <TechUniverse />
+
+          {/* 7. Cinematic Contact & Inquiry Section */}
+          <ContactSection />
+        </main>
+
+        {/* 8. Luxury Editorial Footer */}
+        <Footer />
+      </div>
+    </SmoothScroll>
+  );
 }
 
-export default App
+export default App;
