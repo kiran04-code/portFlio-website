@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
 
-const Hero = () => {
+const Hero = ({ loaderComplete }) => {
   const containerRef = useRef(null);
   const textLine1Ref = useRef(null);
   const textLine2Ref = useRef(null);
@@ -11,32 +11,61 @@ const Hero = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      const runEntranceAnimation = () => {
+        const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
-      // Landing entrance animation for background text
-      tl.fromTo(
-        [textLine1Ref.current, textLine2Ref.current],
-        { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.0, stagger: 0.12, delay: 0.1 }
-      )
-      // Portrait smoothly glides up into place overlapping the text
-      .fromTo(
-        portraitRef.current,
-        { y: 40, opacity: 0, scale: 0.95 },
-        { y: 0, opacity: 1, scale: 1, duration: 1.1 },
-        "-=0.7"
-      )
-      // Supporting intro and CTAs fade in
-      .fromTo(
-        bottomRef.current,
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8 },
-        "-=0.6"
-      );
+        // Set initial states
+        gsap.set([textLine1Ref.current, textLine2Ref.current], { yPercent: 120, opacity: 0 });
+        gsap.set(portraitRef.current, { y: 50, scale: 0.94, opacity: 0 });
+        gsap.set(bottomRef.current, { y: 30, opacity: 0 });
+
+        // Monumental background text reveals with kinetic masking
+        tl.to(
+          [textLine1Ref.current, textLine2Ref.current],
+          {
+            yPercent: 0,
+            opacity: 1,
+            duration: 1.2,
+            stagger: 0.15,
+            ease: "power4.out",
+          }
+        )
+        // Portrait smoothly rises in front of the text
+        .to(
+          portraitRef.current,
+          {
+            y: 0,
+            scale: 1,
+            opacity: 1,
+            duration: 1.3,
+            ease: "power3.out",
+          },
+          "-=0.95"
+        )
+        // Bottom story & CTAs fade in
+        .to(
+          bottomRef.current,
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.9,
+            ease: "power2.out",
+          },
+          "-=0.7"
+        );
+      };
+
+      if (loaderComplete) {
+        runEntranceAnimation();
+      } else {
+        // Fallback timer if loader was skipped or previously completed
+        const timer = setTimeout(runEntranceAnimation, 250);
+        return () => clearTimeout(timer);
+      }
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [loaderComplete]);
 
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
@@ -61,10 +90,10 @@ const Hero = () => {
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 pointer-events-none leading-[0.84] px-4 sm:px-6 md:px-8">
           
           {/* Line 1: YES, I AM A */}
-          <div className="w-full flex justify-center py-1">
+          <div className="w-full flex justify-center py-1 overflow-hidden">
             <h1
               ref={textLine1Ref}
-              className="text-[13.5vw] sm:text-[14.5vw] md:text-[14vw] lg:text-[13vw] font-black uppercase font-condensed tracking-tight text-white whitespace-nowrap drop-shadow-[0_10px_35px_rgba(0,0,0,0.9)]"
+              className="text-[13.5vw] sm:text-[14.5vw] md:text-[14vw] lg:text-[13vw] font-black uppercase font-condensed tracking-tight text-white whitespace-nowrap drop-shadow-[0_10px_35px_rgba(0,0,0,0.9)] will-change-transform"
               style={{ fontFamily: "'Bebas Neue', 'Anton', sans-serif" }}
             >
               YES, I AM A
@@ -72,10 +101,10 @@ const Hero = () => {
           </div>
 
           {/* Line 2: SOFTWARE DEVELOPER */}
-          <div className="w-full flex justify-center py-1">
+          <div className="w-full flex justify-center py-1 overflow-hidden">
             <h1
               ref={textLine2Ref}
-              className="text-[13.5vw] sm:text-[14.5vw] md:text-[14vw] lg:text-[13vw] font-black uppercase font-condensed tracking-tight text-white whitespace-nowrap drop-shadow-[0_10px_35px_rgba(0,0,0,0.9)]"
+              className="text-[13.5vw] sm:text-[14.5vw] md:text-[14vw] lg:text-[13vw] font-black uppercase font-condensed tracking-tight text-white whitespace-nowrap drop-shadow-[0_10px_35px_rgba(0,0,0,0.9)] will-change-transform"
               style={{ fontFamily: "'Bebas Neue', 'Anton', sans-serif" }}
             >
               SOFTWARE <span className="text-zinc-400">DEVELOPER</span><span className="text-white">.</span>
@@ -87,7 +116,7 @@ const Hero = () => {
         {/* Layer 2: Image in Front & Shifted Upside (z-20, above the text in background) */}
         <div
           ref={portraitRef}
-          className="relative z-20 w-[260px] sm:w-[330px] md:w-[410px] lg:w-[460px] aspect-[3/4] flex items-end justify-center pointer-events-auto -translate-y-6 md:-translate-y-12"
+          className="relative z-20 w-[260px] sm:w-[330px] md:w-[410px] lg:w-[460px] aspect-[3/4] flex items-end justify-center pointer-events-auto -translate-y-6 md:-translate-y-12 will-change-transform"
         >
           {/* AI Neural Background-Removed Cutout from kiran_hero_studio.jpg */}
           <img
@@ -105,7 +134,7 @@ const Hero = () => {
       {/* Layer 3: Supporting Content & Editorial CTAs */}
       <div
         ref={bottomRef}
-        className="relative z-30 max-w-[1500px] w-full mx-auto flex flex-col md:flex-row items-start md:items-end justify-between gap-6 pt-4"
+        className="relative z-30 max-w-[1500px] w-full mx-auto flex flex-col md:flex-row items-start md:items-end justify-between gap-6 pt-4 will-change-transform"
       >
         
         {/* Left Narrative */}

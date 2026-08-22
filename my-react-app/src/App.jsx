@@ -25,7 +25,7 @@ function App() {
 
         <main>
           {/* 1. Cinematic Hero with Monumental Typography & Parallax Portrait */}
-          <Hero />
+          <Hero loaderComplete={loaderComplete} />
 
           {/* 2. Engineering Biography & Technical Philosophy */}
           <About />
