@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
-import { ArrowUpRight, Github, ExternalLink, Sparkles, Layers, Cpu } from "lucide-react";
+import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ProjectThambnel } from "../assets/assets";
+import { images } from "../assets/assets";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,7 +19,7 @@ const ProjectShowcase = () => {
       category: "Distributed Social Platform",
       tagline: "Scalable full-stack social ecosystem featuring JWT authentication, media pipelines, follow mechanics, and Redis caching.",
       tech: ["Node.js", "Express.js", "MongoDB", "Redis", "Cloudinary", "Tailwind CSS"],
-      image: ProjectThambnel[0],
+      image: images.proj1_im1 || images.project01,
       live: null,
       github: "https://github.com/kiran04-code/Twitter-Backend",
     },
@@ -30,18 +30,18 @@ const ProjectShowcase = () => {
       category: "Real-Time Systems",
       tagline: "Bi-directional WebSocket messaging platform with Zustand state, online status tracking, and end-to-end media sharing.",
       tech: ["React.js", "Socket.IO", "Node.js", "MongoDB", "Zustand", "Tailwind CSS"],
-      image: ProjectThambnel[1],
+      image: images.project01 || images.proj2_img1,
       live: "https://quick-chat-frontend-7n73.onrender.com/login",
       github: "https://github.com/kiran04-code/QuickChat-Frontend",
     },
     {
       id: "proj3",
       number: "03",
-      title: "HeathShield Telehealth Hub",
+      title: "HealthShield Telehealth Hub",
       category: "Healthcare Infrastructure",
       tagline: "Centralized medical platform with role-based dashboard access, encrypted health records, and dynamic appointment scheduling.",
       tech: ["React.js", "Express.js", "MongoDB", "Node.js", "REST APIs"],
-      image: ProjectThambnel[2],
+      image: images.L1,
       live: "https://healthshield-frontend-1.onrender.com",
       github: "https://github.com/kiran04-code/HealthShield-Frontend",
     },
@@ -52,7 +52,7 @@ const ProjectShowcase = () => {
       category: "E-Commerce Engineering",
       tagline: "Modern high-performance apparel retail engine with catalog filtering, secure checkout flows, and administrative inventory controls.",
       tech: ["MERN Stack", "Tailwind CSS", "REST API", "Razorpay"],
-      image: ProjectThambnel[3],
+      image: images.Project2,
       live: null,
       github: "https://github.com/kiran04-code/kesula-threads-backend",
     },
@@ -63,7 +63,7 @@ const ProjectShowcase = () => {
       category: "Educational Infrastructure",
       tagline: "Student-led centralized academic platform organizing courseware, unit question banks, and handwritten notes for VIT Pune.",
       tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-      image: ProjectThambnel[4],
+      image: images.Project3,
       live: null,
       github: "https://github.com/kiran04-code",
     },
@@ -73,12 +73,12 @@ const ProjectShowcase = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         containerRef.current?.querySelectorAll(".editorial-project-card") || [],
-        { y: 60, opacity: 0 },
+        { y: 50, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.9,
-          stagger: 0.18,
+          duration: 0.8,
+          stagger: 0.15,
           ease: "power3.out",
           scrollTrigger: {
             trigger: containerRef.current,
@@ -108,7 +108,7 @@ const ProjectShowcase = () => {
                 04 // Curated Engineering Archive
               </span>
             </div>
-            <h2 className="text-3xl sm:text-5xl md:text-7xl font-black uppercase tracking-tight font-display break-words">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight font-display">
               SELECTED <span className="text-zinc-600">PROJECTS.</span>
             </h2>
           </div>
@@ -137,8 +137,8 @@ const ProjectShowcase = () => {
                       <span className="uppercase tracking-widest text-zinc-400 truncate">{project.category}</span>
                     </div>
 
-                    {/* Title */}
-                    <h3 className="text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tight uppercase font-display mb-3 sm:mb-4 group-hover:text-zinc-200 transition-colors break-words">
+                    {/* Title — Clean Space Grotesk / Outfit font without awkward mid-word breaks */}
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight uppercase font-display mb-3 sm:mb-4 group-hover:text-zinc-200 transition-colors leading-tight">
                       {project.title}
                     </h3>
 
@@ -204,12 +204,12 @@ const ProjectShowcase = () => {
                 <div
                   onClick={() => navigate(`/project/${project.id}`)}
                   data-cursor="view"
-                  className="lg:col-span-6 relative rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-white/10 aspect-[16/10] group-hover:border-white/20 transition-all cursor-pointer shadow-2xl"
+                  className="lg:col-span-6 relative rounded-xl sm:rounded-2xl overflow-hidden bg-zinc-950 border border-white/10 aspect-[16/10] group-hover:border-white/20 transition-all cursor-pointer shadow-2xl flex items-center justify-center"
                 >
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 group-hover:brightness-105"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 group-hover:brightness-105"
                   />
                   
                   {/* Subtle inner shadow mask */}

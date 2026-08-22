@@ -186,8 +186,8 @@ const KhanaavalStory = () => {
               [ORDER • SUBSCRIBE • EAT]
             </span>
           </div>
-          <p className="headline-line text-zinc-400 max-w-2xl text-sm sm:text-base md:text-xl font-light leading-relaxed pt-2 sm:pt-4">
-            Founded and engineered from zero to production. A full-scale food-tech platform bridging university students with verified mess providers through digital subscriptions, daily ordering, and automated cloud kitchen operations.
+          <p className="headline-line text-zinc-400 max-w-xl text-sm sm:text-base md:text-lg font-light leading-relaxed pt-2 sm:pt-3">
+            A production food-tech ecosystem connecting university students with verified mess providers through automated meal subscriptions and QR attendance check-ins.
           </p>
         </div>
 

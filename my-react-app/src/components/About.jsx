@@ -92,17 +92,18 @@ const About = () => {
           
           {/* Left Title & Philosophy */}
           <div ref={textRef} className="lg:col-span-6 space-y-6">
-            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight font-display leading-[0.95] break-words">
-              ARCHITECTING SYSTEMS <br />
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase font-display leading-[1.05] tracking-tight">
+              ARCHITECTING <br />
+              SYSTEMS <br />
               <span className="text-zinc-600">THAT SCALE.</span>
             </h2>
 
-            <div className="space-y-4 text-sm sm:text-base md:text-lg text-zinc-300 font-light leading-relaxed">
+            <div className="space-y-3 text-sm sm:text-base md:text-lg text-zinc-300 font-light leading-relaxed">
               <p>
-                I'm <span className="text-white font-medium">Kiran Santosh Rathod</span>, a Full-Stack Engineer and DevOps practitioner studying Computer Science at <span className="text-white font-medium">Vishwakarma Institute of Technology (VIT Pune)</span>.
+                I'm <span className="text-white font-medium">Kiran Santosh Rathod</span>, a Full-Stack Engineer and DevOps practitioner studying Computer Science at <span className="text-white font-medium">VIT Pune</span>.
               </p>
               <p>
-                My passion lies at the intersection of robust systems engineering and high-end creative interaction. Whether scaling cloud infrastructure with Docker and Redis at Blackangler or engineering my startup platform <span className="text-white font-medium underline underline-offset-4 decoration-white/30">Khanaaval.com</span> to serve hundreds of university students daily, I build software designed for high availability, security, and memorable human experiences.
+                I architect high-throughput systems, cloud infrastructure with Docker and Redis at Blackangler, and founded <span className="text-white font-medium underline underline-offset-4 decoration-white/30">Khanaaval.com</span> serving hundreds of daily students.
               </p>
             </div>
 
