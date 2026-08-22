@@ -37,16 +37,16 @@ const ContactSection = () => {
           </span>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           
           {/* Left Title & Direct Channels (6 cols) */}
-          <div className="lg:col-span-6 space-y-8">
-            <h2 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter font-display leading-[0.88]">
+          <div className="lg:col-span-6 space-y-6 sm:space-y-8">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase tracking-tight font-display leading-[0.92] break-words">
               LET'S BUILD <br />
               <span className="text-zinc-600">SOMETHING.</span>
             </h2>
 
-            <p className="text-base md:text-lg text-zinc-400 font-light max-w-md leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-zinc-400 font-light max-w-md leading-relaxed">
               Have an ambitious project, scaling challenge, or high-impact engineering role? Let's discuss architecture, systems, and product execution.
             </p>
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Terminal, Shield, Cpu, Code2, Globe, Server, Database, GitBranch, ArrowUpRight, GraduationCap } from "lucide-react";
+import { Shield, Code2, Server, Database, ArrowUpRight, GraduationCap } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -75,9 +75,9 @@ const About = () => {
     <section
       ref={containerRef}
       id="about"
-      className="relative w-full py-28 md:py-40 bg-[#050505] text-white border-t border-white/[0.08] overflow-hidden"
+      className="relative w-full py-20 sm:py-28 md:py-40 bg-[#050505] text-white border-t border-white/[0.08] overflow-hidden"
     >
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         
         {/* Header */}
         <div className="flex items-center gap-3 mb-6">
@@ -88,16 +88,16 @@ const About = () => {
         </div>
 
         {/* Top Story Grid */}
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-24">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-16 md:mb-24">
           
           {/* Left Title & Philosophy */}
           <div ref={textRef} className="lg:col-span-6 space-y-6">
-            <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter font-display leading-[0.9]">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight font-display leading-[0.95] break-words">
               ARCHITECTING SYSTEMS <br />
               <span className="text-zinc-600">THAT SCALE.</span>
             </h2>
 
-            <div className="space-y-4 text-base md:text-lg text-zinc-300 font-light leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base md:text-lg text-zinc-300 font-light leading-relaxed">
               <p>
                 I'm <span className="text-white font-medium">Kiran Santosh Rathod</span>, a Full-Stack Engineer and DevOps practitioner studying Computer Science at <span className="text-white font-medium">Vishwakarma Institute of Technology (VIT Pune)</span>.
               </p>
@@ -106,24 +106,24 @@ const About = () => {
               </p>
             </div>
 
-            <div className="pt-4 flex flex-wrap gap-4">
+            <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
               <a
                 href="https://github.com/kiran04-code"
                 target="_blank"
                 rel="noopener noreferrer"
                 data-cursor="open"
-                className="px-6 py-3 rounded-xl bg-white text-black font-mono text-xs font-bold uppercase tracking-wider hover:bg-zinc-200 transition-all flex items-center gap-2"
+                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white text-black font-mono text-xs font-bold uppercase tracking-wider hover:bg-zinc-200 transition-all flex items-center justify-center gap-2"
               >
                 <span>Explore GitHub Code</span>
                 <ArrowUpRight size={15} />
               </a>
 
               <a
-                href="/Kiran_Rathod_resume_new.pdf"
+                href="/kiran.rathod.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 data-cursor="open"
-                className="px-6 py-3 rounded-xl bg-white/[0.05] border border-white/15 text-white font-mono text-xs uppercase tracking-wider hover:bg-white/[0.1] transition-all flex items-center gap-2"
+                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white/[0.05] border border-white/15 text-white font-mono text-xs uppercase tracking-wider hover:bg-white/[0.1] transition-all flex items-center justify-center gap-2"
               >
                 <span>Read Full Resume</span>
                 <ArrowUpRight size={15} />
@@ -132,18 +132,18 @@ const About = () => {
           </div>
 
           {/* Right Bento Box: Academic & Technical Credentials */}
-          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
             
             {/* Education Card */}
-            <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/[0.08] flex flex-col justify-between h-[280px]">
-              <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-white">
+            <div className="p-6 sm:p-8 rounded-3xl bg-white/[0.02] border border-white/[0.08] flex flex-col justify-between min-h-[220px]">
+              <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-white mb-4">
                 <GraduationCap size={20} />
               </div>
               <div>
                 <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-1">
                   Academic Foundation
                 </p>
-                <h4 className="text-xl font-bold text-white tracking-tight mb-1">
+                <h4 className="text-lg sm:text-xl font-bold text-white tracking-tight mb-1">
                   B.Tech in Computer Science
                 </h4>
                 <p className="text-xs text-zinc-400">
@@ -156,15 +156,15 @@ const About = () => {
             </div>
 
             {/* Current Production Role */}
-            <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/[0.08] flex flex-col justify-between h-[280px]">
-              <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-white">
+            <div className="p-6 sm:p-8 rounded-3xl bg-white/[0.02] border border-white/[0.08] flex flex-col justify-between min-h-[220px]">
+              <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-white mb-4">
                 <Shield size={20} />
               </div>
               <div>
                 <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-1">
                   Industry Role
                 </p>
-                <h4 className="text-xl font-bold text-white tracking-tight mb-1">
+                <h4 className="text-lg sm:text-xl font-bold text-white tracking-tight mb-1">
                   Full-Stack & DevOps
                 </h4>
                 <p className="text-xs text-zinc-400">
@@ -177,18 +177,18 @@ const About = () => {
             </div>
 
             {/* Platform Founder */}
-            <div className="sm:col-span-2 p-8 rounded-3xl bg-white/[0.02] border border-white/[0.08] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
-              <div>
-                <div className="flex items-center gap-2 mb-2">
+            <div className="sm:col-span-2 p-6 sm:p-8 rounded-3xl bg-white/[0.02] border border-white/[0.08] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+              <div className="space-y-1">
+                <div className="flex items-center gap-2 mb-1">
                   <span className="w-2 h-2 rounded-full bg-emerald-400" />
                   <p className="text-xs font-mono uppercase tracking-widest text-zinc-400">
                     Active Startup Venture
                   </p>
                 </div>
-                <h4 className="text-2xl font-bold text-white tracking-tight">
+                <h4 className="text-xl sm:text-2xl font-bold text-white tracking-tight break-words">
                   Founder @ Khanaaval.com
                 </h4>
-                <p className="text-xs text-zinc-400 mt-1">
+                <p className="text-xs text-zinc-400">
                   Live Food-Tech ecosystem serving 300+ daily student meals.
                 </p>
               </div>
@@ -198,7 +198,7 @@ const About = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-cursor="open"
-                className="px-5 py-2.5 rounded-xl bg-white/[0.06] border border-white/15 text-xs font-mono uppercase tracking-wider text-white hover:bg-white hover:text-black transition-all flex items-center gap-2 shrink-0"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-white/[0.06] border border-white/15 text-xs font-mono uppercase tracking-wider text-white hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2 shrink-0"
               >
                 <span>Visit Live Platform</span>
                 <ArrowUpRight size={14} />
@@ -209,17 +209,17 @@ const About = () => {
         </div>
 
         {/* Core Pillars Grid */}
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {corePillars.map((pillar, i) => (
             <div
               key={i}
-              className="p-8 rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-white/20 transition-all duration-300 flex flex-col justify-between group"
+              className="p-6 sm:p-8 rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-white/20 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 <div className="w-12 h-12 rounded-2xl bg-white/[0.05] border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   {pillar.icon}
                 </div>
-                <h3 className="text-xl font-bold text-white tracking-tight mb-3">
+                <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight mb-3">
                   {pillar.title}
                 </h3>
               </div>

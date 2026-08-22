@@ -58,13 +58,13 @@ const Hero = () => {
       <div className="relative w-full max-w-[1600px] mx-auto my-auto flex items-center justify-center min-h-[52vh] md:min-h-[60vh]">
         
         {/* Layer 1: Background Typography (z-10, behind portrait) */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 pointer-events-none leading-[0.84]">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 pointer-events-none leading-[0.84] px-4 sm:px-6 md:px-8">
           
           {/* Line 1: YES, I AM A */}
           <div className="w-full flex justify-center py-1">
             <h1
               ref={textLine1Ref}
-              className="text-[16vw] sm:text-[15vw] md:text-[14vw] lg:text-[13.2vw] font-black uppercase font-condensed tracking-tight text-white whitespace-nowrap drop-shadow-[0_10px_35px_rgba(0,0,0,0.9)]"
+              className="text-[13.5vw] sm:text-[14.5vw] md:text-[14vw] lg:text-[13vw] font-black uppercase font-condensed tracking-tight text-white whitespace-nowrap drop-shadow-[0_10px_35px_rgba(0,0,0,0.9)]"
               style={{ fontFamily: "'Bebas Neue', 'Anton', sans-serif" }}
             >
               YES, I AM A
@@ -75,7 +75,7 @@ const Hero = () => {
           <div className="w-full flex justify-center py-1">
             <h1
               ref={textLine2Ref}
-              className="text-[16vw] sm:text-[15vw] md:text-[14vw] lg:text-[13.2vw] font-black uppercase font-condensed tracking-tight text-white whitespace-nowrap drop-shadow-[0_10px_35px_rgba(0,0,0,0.9)]"
+              className="text-[13.5vw] sm:text-[14.5vw] md:text-[14vw] lg:text-[13vw] font-black uppercase font-condensed tracking-tight text-white whitespace-nowrap drop-shadow-[0_10px_35px_rgba(0,0,0,0.9)]"
               style={{ fontFamily: "'Bebas Neue', 'Anton', sans-serif" }}
             >
               SOFTWARE <span className="text-zinc-400">DEVELOPER</span><span className="text-white">.</span>
@@ -89,9 +89,9 @@ const Hero = () => {
           ref={portraitRef}
           className="relative z-20 w-[260px] sm:w-[330px] md:w-[410px] lg:w-[460px] aspect-[3/4] flex items-end justify-center pointer-events-auto -translate-y-6 md:-translate-y-12"
         >
-          {/* Direct background-removed cutout from kiran_hero_studio.jpg */}
+          {/* AI Neural Background-Removed Cutout from kiran_hero_studio.jpg */}
           <img
-            src="/kiran_hero_cutout_clean.png?v=5"
+            src="/kiran_hero_cutout.png?v=6"
             alt="Kiran Rathod — Software Developer"
             className="w-full h-full object-contain object-bottom drop-shadow-[0_25px_60px_rgba(0,0,0,0.98)] transition-all duration-500 hover:brightness-110"
           />

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Briefcase, Calendar, MapPin, CheckCircle2, ArrowUpRight, GitBranch, Layers, ShieldCheck } from "lucide-react";
+import { MapPin, CheckCircle2 } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -87,12 +87,12 @@ const Experience = () => {
     <section
       ref={containerRef}
       id="experience"
-      className="relative w-full py-28 md:py-40 bg-black text-white border-t border-white/[0.08] overflow-hidden"
+      className="relative w-full py-20 sm:py-28 md:py-40 bg-black text-white border-t border-white/[0.08] overflow-hidden"
     >
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-20 md:mb-28 border-b border-white/[0.08] pb-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16 md:mb-28 border-b border-white/[0.08] pb-8">
           <div>
             <div className="flex items-center gap-3 mb-3">
               <div className="w-2 h-2 rounded-full bg-white" />
@@ -100,7 +100,7 @@ const Experience = () => {
                 Career Trajectory
               </span>
             </div>
-            <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter font-display">
+            <h2 className="text-3xl sm:text-5xl md:text-7xl font-black uppercase tracking-tight font-display break-words">
               PROFESSIONAL <span className="text-zinc-600">EXPERIENCE.</span>
             </h2>
           </div>
@@ -111,7 +111,7 @@ const Experience = () => {
         </div>
 
         {/* Timeline Container */}
-        <div className="relative pl-6 md:pl-12">
+        <div className="relative pl-4 sm:pl-8 md:pl-12">
           
           {/* Animated Vertical Line */}
           <div
@@ -119,25 +119,25 @@ const Experience = () => {
             className="absolute left-0 top-0 w-[2px] h-full bg-gradient-to-b from-white via-zinc-400 to-zinc-800 origin-top"
           />
 
-          <div className="space-y-16 md:space-y-24">
+          <div className="space-y-12 sm:space-y-16 md:space-y-24">
             {experiences.map((exp, idx) => (
               <div key={idx} className="experience-card relative">
                 
                 {/* Node indicator */}
-                <div className="absolute -left-[31px] md:-left-[55px] top-1.5 w-4 h-4 rounded-full bg-black border-2 border-white flex items-center justify-center">
+                <div className="absolute -left-[23px] sm:-left-[39px] md:-left-[55px] top-2 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-black border-2 border-white flex items-center justify-center">
                   <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                 </div>
 
                 {/* Content Box */}
-                <div className="p-8 md:p-12 rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-white/20 transition-all duration-300">
+                <div className="p-5 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-white/20 transition-all duration-300">
                   
                   {/* Top metadata */}
-                  <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-                    <div className="flex items-center gap-3">
-                      <span className="px-3 py-1 rounded-full bg-white text-black font-mono text-xs font-bold tracking-wider uppercase">
+                  <div className="flex flex-wrap items-center justify-between gap-3 mb-4 sm:mb-6">
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <span className="px-3 py-1 rounded-full bg-white text-black font-mono text-[11px] sm:text-xs font-bold tracking-wider uppercase">
                         {exp.period}
                       </span>
-                      <span className="px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 font-mono text-xs text-zinc-400 uppercase">
+                      <span className="px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 font-mono text-[11px] sm:text-xs text-zinc-400 uppercase">
                         {exp.type}
                       </span>
                     </div>
@@ -149,26 +149,26 @@ const Experience = () => {
                   </div>
 
                   {/* Role & Company */}
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight font-display mb-1">
+                  <h3 className="text-xl sm:text-2xl md:text-4xl font-black text-white tracking-tight font-display mb-1 break-words">
                     {exp.role}
                   </h3>
-                  <p className="text-lg md:text-xl text-zinc-400 font-medium mb-6">
+                  <p className="text-base sm:text-lg md:text-xl text-zinc-400 font-medium mb-4 sm:mb-6">
                     {exp.company}
                   </p>
 
-                  <p className="text-sm md:text-base text-zinc-300 font-light leading-relaxed mb-8 max-w-3xl">
+                  <p className="text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed mb-6 sm:mb-8 max-w-3xl">
                     {exp.description}
                   </p>
 
                   {/* Highlights */}
-                  <div className="space-y-3 mb-8">
+                  <div className="space-y-3 mb-6 sm:mb-8">
                     <p className="text-xs font-mono uppercase tracking-widest text-zinc-500">
                       Key Technical Contributions:
                     </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3">
                       {exp.highlights.map((point, pIdx) => (
-                        <div key={pIdx} className="flex items-start gap-3 text-xs md:text-sm text-zinc-400">
-                          <CheckCircle2 size={16} className="text-white shrink-0 mt-0.5" />
+                        <div key={pIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-400">
+                          <CheckCircle2 size={15} className="text-white shrink-0 mt-0.5" />
                           <span className="leading-relaxed">{point}</span>
                         </div>
                       ))}
@@ -176,11 +176,11 @@ const Experience = () => {
                   </div>
 
                   {/* Technology Tags */}
-                  <div className="flex flex-wrap gap-2 pt-6 border-t border-white/[0.06]">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-4 sm:pt-6 border-t border-white/[0.06]">
                     {exp.tech.map((t, tIdx) => (
                       <span
                         key={tIdx}
-                        className="px-3 py-1 rounded-lg bg-white/[0.03] border border-white/[0.08] font-mono text-[11px] text-zinc-300"
+                        className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-lg bg-white/[0.03] border border-white/[0.08] font-mono text-[10px] sm:text-[11px] text-zinc-300"
                       >
                         {t}
                       </span>

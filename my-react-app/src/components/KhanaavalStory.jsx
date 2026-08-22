@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { ArrowUpRight, CheckCircle2, Layers, Server, Zap, Database, QrCode, Utensils, ShieldCheck, Flame } from "lucide-react";
+import { ArrowUpRight, Layers, Server, Zap, QrCode, Utensils, ShieldCheck } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -18,12 +18,12 @@ const KhanaavalStory = () => {
       // Headline reveal
       gsap.fromTo(
         headlineRef.current?.querySelectorAll(".headline-line") || [],
-        { y: 80, opacity: 0 },
+        { y: 60, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 1,
-          stagger: 0.15,
+          duration: 0.9,
+          stagger: 0.12,
           ease: "power3.out",
           scrollTrigger: {
             trigger: headlineRef.current,
@@ -35,10 +35,9 @@ const KhanaavalStory = () => {
       // Mockup 3D tilt & scale
       gsap.fromTo(
         mockupRef.current,
-        { scale: 0.9, rotateX: 12, opacity: 0.6 },
+        { scale: 0.94, opacity: 0.7 },
         {
           scale: 1,
-          rotateX: 0,
           opacity: 1,
           ease: "none",
           scrollTrigger: {
@@ -53,12 +52,12 @@ const KhanaavalStory = () => {
       // Stats stagger
       gsap.fromTo(
         statsRef.current?.querySelectorAll(".stat-card") || [],
-        { y: 50, opacity: 0 },
+        { y: 40, opacity: 0 },
         {
           y: 0,
           opacity: 1,
           duration: 0.8,
-          stagger: 0.12,
+          stagger: 0.1,
           ease: "power3.out",
           scrollTrigger: {
             trigger: statsRef.current,
@@ -157,12 +156,12 @@ const KhanaavalStory = () => {
     <section
       ref={sectionRef}
       id="khanaaval"
-      className="relative w-full py-28 md:py-40 bg-[#050505] text-white border-t border-white/[0.08] overflow-hidden"
+      className="relative w-full py-20 sm:py-28 md:py-40 bg-[#050505] text-white border-t border-white/[0.08] overflow-hidden"
     >
       {/* Background Ambience */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[80vw] h-[50vh] bg-white/[0.02] rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         
         {/* Section Header Flag */}
         <div className="flex items-center gap-3 mb-6">
@@ -175,39 +174,39 @@ const KhanaavalStory = () => {
         {/* Scene 1: Manifesto Headline */}
         <div ref={headlineRef} className="space-y-3 mb-16 md:mb-24">
           <div className="overflow-hidden">
-            <h2 className="headline-line text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter font-display leading-[0.9]">
+            <h2 className="headline-line text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black uppercase tracking-tight font-display leading-[0.95] break-words">
               KHANAAVAL.COM
             </h2>
           </div>
-          <div className="overflow-hidden flex flex-wrap items-baseline gap-4 md:gap-8">
-            <h3 className="headline-line text-2xl sm:text-4xl md:text-6xl font-light uppercase tracking-tighter text-zinc-500 font-display">
+          <div className="overflow-hidden flex flex-wrap items-baseline gap-3 sm:gap-6">
+            <h3 className="headline-line text-xl sm:text-3xl md:text-5xl font-light uppercase tracking-tight text-zinc-500 font-display">
               FOOD SHOULD BE SIMPLE.
             </h3>
-            <span className="headline-line hidden md:inline-block font-mono text-sm uppercase tracking-widest text-zinc-400">
+            <span className="headline-line font-mono text-xs sm:text-sm uppercase tracking-widest text-zinc-400">
               [ORDER • SUBSCRIBE • EAT]
             </span>
           </div>
-          <p className="headline-line text-zinc-400 max-w-2xl text-base md:text-xl font-light leading-relaxed pt-4">
+          <p className="headline-line text-zinc-400 max-w-2xl text-sm sm:text-base md:text-xl font-light leading-relaxed pt-2 sm:pt-4">
             Founded and engineered from zero to production. A full-scale food-tech platform bridging university students with verified mess providers through digital subscriptions, daily ordering, and automated cloud kitchen operations.
           </p>
         </div>
 
         {/* Scene 2: The Real Visual Showcase (Browser Canvas) */}
-        <div ref={mockupRef} className="relative mb-24 md:mb-36 perspective-[1000px]">
+        <div ref={mockupRef} className="relative mb-20 md:mb-36">
           {/* Main Desktop Window Frame */}
           <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border border-white/15 bg-[#0a0a0a] shadow-[0_30px_100px_rgba(0,0,0,0.9)] group">
             
             {/* Top Browser Bar */}
-            <div className="px-6 py-4 bg-zinc-950/80 backdrop-blur-md border-b border-white/[0.08] flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-zinc-700/60" />
-                <div className="w-3 h-3 rounded-full bg-zinc-700/60" />
-                <div className="w-3 h-3 rounded-full bg-zinc-700/60" />
+            <div className="px-4 sm:px-6 py-3 sm:py-4 bg-zinc-950/80 backdrop-blur-md border-b border-white/[0.08] flex items-center justify-between gap-2">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-zinc-700/60" />
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-zinc-700/60" />
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-zinc-700/60" />
               </div>
 
-              <div className="px-4 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] font-mono text-[11px] text-zinc-400 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                <span>https://www.khanaaval.com</span>
+              <div className="px-3 sm:px-4 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] font-mono text-[10px] sm:text-[11px] text-zinc-400 flex items-center gap-2 truncate max-w-[200px] sm:max-w-none">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+                <span className="truncate">https://www.khanaaval.com</span>
               </div>
 
               <a
@@ -215,54 +214,40 @@ const KhanaavalStory = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-cursor="open"
-                className="text-xs font-mono uppercase tracking-wider text-zinc-400 hover:text-white flex items-center gap-1 transition-colors"
+                className="text-xs font-mono uppercase tracking-wider text-zinc-400 hover:text-white flex items-center gap-1 transition-colors shrink-0"
               >
-                <span>Live Site</span>
+                <span className="hidden sm:inline">Live Site</span>
                 <ArrowUpRight size={14} />
               </a>
             </div>
 
-            {/* Captured Real Screenshot Hero */}
-            <div className="relative aspect-[16/9] w-full overflow-hidden bg-black">
+            {/* Production Screenshot */}
+            <div className="relative w-full overflow-hidden bg-black aspect-[16/10] sm:aspect-[16/9]">
               <img
                 src="/khanaaval/khanaaval_hero.png"
-                alt="Khanaaval.com Live Platform UI"
-                className="w-full h-full object-cover object-top transition-transform duration-1000 ease-out group-hover:scale-[1.02]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-60" />
-            </div>
-          </div>
-
-          {/* Floating Mobile Companion Card */}
-          <div className="hidden lg:block absolute -bottom-12 -right-8 w-[280px] rounded-2xl overflow-hidden border border-white/20 bg-zinc-950 shadow-2xl z-20 group/mobile">
-            <div className="p-3 bg-zinc-900/90 border-b border-white/10 flex items-center justify-between text-[10px] font-mono text-zinc-400">
-              <span>Mobile PWA</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            </div>
-            <div className="h-[360px] overflow-hidden bg-black">
-              <img
-                src="/khanaaval/khanaaval_mobile.png"
-                alt="Khanaaval Mobile Interface"
-                className="w-full h-auto object-cover object-top transition-transform duration-700 group-hover/mobile:scale-105"
+                alt="Khanaaval Production Web App"
+                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
               />
             </div>
           </div>
         </div>
 
-        {/* Scene 3: High-Impact Production Metrics */}
-        <div ref={statsRef} className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-24 md:mb-36">
-          {stats.map((stat, i) => (
+        {/* Scene 3: Live Production Metrics */}
+        <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 mb-20 md:mb-36">
+          {stats.map((stat, idx) => (
             <div
-              key={i}
-              className="stat-card p-6 md:p-8 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-white/20 transition-all duration-300"
+              key={idx}
+              className="stat-card p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-white/20 transition-all flex flex-col justify-between"
             >
-              <p className="font-mono text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter mb-2 font-display">
-                {stat.value}
-              </p>
-              <h4 className="text-sm font-bold text-zinc-200 tracking-tight mb-1">
-                {stat.label}
-              </h4>
-              <p className="text-xs text-zinc-500 font-mono">
+              <div>
+                <h4 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight font-display mb-1">
+                  {stat.value}
+                </h4>
+                <p className="text-xs sm:text-sm font-bold text-zinc-300 mb-1">
+                  {stat.label}
+                </p>
+              </div>
+              <p className="text-[10px] sm:text-xs text-zinc-500 font-mono">
                 {stat.desc}
               </p>
             </div>
@@ -270,13 +255,13 @@ const KhanaavalStory = () => {
         </div>
 
         {/* Scene 4: Technical Architecture Pipeline */}
-        <div ref={archRef} className="mb-24 md:mb-36">
-          <div className="mb-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-white/[0.08] pb-6">
+        <div ref={archRef} className="mb-20 md:mb-36">
+          <div className="mb-8 sm:mb-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-white/[0.08] pb-6">
             <div>
               <span className="text-xs font-mono uppercase tracking-[0.25em] text-zinc-500">
                 System Engineering
               </span>
-              <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tight font-display mt-1">
+              <h3 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight font-display mt-1 break-words">
                 DISTRIBUTED ARCHITECTURE
               </h3>
             </div>
@@ -285,18 +270,18 @@ const KhanaavalStory = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4">
             {architectureNodes.map((node, idx) => (
               <div
                 key={idx}
-                className="arch-node p-6 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-white/20 transition-all flex flex-col justify-between h-[220px] group"
+                className="arch-node p-5 sm:p-6 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-white/20 transition-all flex flex-col justify-between min-h-[190px] sm:h-[220px] group"
               >
                 <div>
-                  <div className="flex justify-between items-center text-xs font-mono text-zinc-600 mb-4">
+                  <div className="flex justify-between items-center text-xs font-mono text-zinc-600 mb-3 sm:mb-4">
                     <span>LAYER {node.step}</span>
                     <span className="w-1.5 h-1.5 rounded-full bg-white/40 group-hover:bg-white transition-colors" />
                   </div>
-                  <h4 className="text-lg font-bold text-white tracking-tight mb-1 group-hover:text-zinc-200">
+                  <h4 className="text-base sm:text-lg font-bold text-white tracking-tight mb-1 group-hover:text-zinc-200">
                     {node.name}
                   </h4>
                   <p className="font-mono text-xs text-zinc-400 mb-2">
@@ -312,62 +297,64 @@ const KhanaavalStory = () => {
         </div>
 
         {/* Scene 5: Feature Storytelling Grid */}
+        {/* Scene 5: Feature Storytelling Grid — Cinematic UI Cards */}
         <div ref={featuresRef} className="mb-20">
-          <div className="mb-10">
-            <span className="text-xs font-mono uppercase tracking-[0.25em] text-zinc-500">
-              Product Capabilities
-            </span>
-            <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tight font-display mt-1">
-              ENGINEERED FEATURES
+          <div className="mb-8 sm:mb-12">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+              <span className="text-xs font-mono uppercase tracking-[0.25em] text-zinc-400">
+                Production Capabilities // Subsystems
+              </span>
+            </div>
+            <h3 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight font-display mt-1 break-words">
+              ENGINEERED FOR REAL WORKLOADS.
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feat, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {features.map((feat, idx) => (
               <div
-                key={i}
-                className="feature-card p-8 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-white/25 hover:bg-white/[0.04] transition-all duration-300 group"
+                key={idx}
+                className="feature-card relative p-6 sm:p-8 rounded-3xl bg-gradient-to-b from-[#0e0e11] via-[#09090b] to-[#040405] border border-white/[0.08] hover:border-white/30 transition-all duration-500 flex flex-col justify-between group overflow-hidden shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.8)] hover:-translate-y-1"
               >
-                <div className="w-12 h-12 rounded-xl bg-white/[0.05] border border-white/[0.1] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-white group-hover:text-black transition-all">
-                  {React.cloneElement(feat.icon, {
-                    className: "group-hover:text-black transition-colors",
-                  })}
+                {/* Subtle Cinematic Top Rim Glow */}
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Background Ambient Radial Accent */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/[0.02] rounded-full blur-2xl group-hover:bg-white/[0.05] transition-colors pointer-events-none" />
+
+                <div>
+                  {/* Top Bar: Icon + Module Code Badge */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-white/[0.04] border border-white/10 group-hover:border-white/25 group-hover:bg-white/[0.08] flex items-center justify-center text-white transition-all duration-300 shadow-inner">
+                      {feat.icon}
+                    </div>
+
+                    <span className="px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/[0.06] font-mono text-[10px] text-zinc-500 uppercase tracking-widest group-hover:text-zinc-300 group-hover:border-white/15 transition-colors">
+                      MOD-0{idx + 1}
+                    </span>
+                  </div>
+
+                  <h4 className="text-lg sm:text-xl font-bold text-white tracking-tight mb-2.5 group-hover:text-zinc-100 transition-colors font-display">
+                    {feat.title}
+                  </h4>
+
+                  <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
+                    {feat.desc}
+                  </p>
                 </div>
-                <h4 className="text-xl font-bold text-white tracking-tight mb-2">
-                  {feat.title}
-                </h4>
-                <p className="text-sm text-zinc-400 font-light leading-relaxed">
-                  {feat.desc}
-                </p>
+
+                {/* Bottom Status Edge */}
+                <div className="pt-6 mt-6 border-t border-white/[0.05] flex items-center justify-between text-[11px] font-mono text-zinc-500">
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/80" />
+                    <span>PRODUCTION READY</span>
+                  </span>
+                  <ArrowUpRight size={14} className="text-zinc-600 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                </div>
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Scene 6: Flagship Project CTA */}
-        <div className="p-8 md:p-14 rounded-3xl bg-gradient-to-b from-white/[0.05] to-transparent border border-white/15 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="space-y-2 text-center md:text-left">
-            <p className="text-xs font-mono uppercase tracking-[0.3em] text-zinc-400">
-              Founder & Lead Architect
-            </p>
-            <h3 className="text-2xl md:text-4xl font-black text-white uppercase font-display tracking-tight">
-              EXPERIENCE KHANAAVAL LIVE
-            </h3>
-            <p className="text-sm text-zinc-400 font-light max-w-lg">
-              Explore the real deployed platform connecting hundreds of daily students with campus food providers in Pune.
-            </p>
-          </div>
-
-          <a
-            href="https://www.khanaaval.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cursor="open"
-            className="px-8 py-4 rounded-2xl bg-white text-black font-mono text-xs font-bold uppercase tracking-wider hover:bg-zinc-200 transition-all duration-300 flex items-center gap-3 group shadow-[0_0_40px_rgba(255,255,255,0.3)] shrink-0"
-          >
-            <span>Launch Khanaaval.com</span>
-            <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-          </a>
         </div>
 
       </div>
