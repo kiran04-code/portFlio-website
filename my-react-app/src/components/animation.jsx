@@ -8,6 +8,6 @@ const Animations = () =>{
          <div className="hero3"></div>
    </div>
     )
-}
+};
 
 export default Animations
