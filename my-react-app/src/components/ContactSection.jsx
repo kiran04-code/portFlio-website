@@ -13,7 +13,7 @@ const ContactSection = () => {
     setIsSubmitting(true);
     // Simulate direct dispatch
     setTimeout(() => {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
       setSubmitted(true);
       // Construct mailto link fallback
       const subject = encodeURIComponent(`Portfolio Inquiry from ${formState.name}`);
