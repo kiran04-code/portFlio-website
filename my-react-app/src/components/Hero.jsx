@@ -96,7 +96,7 @@ const Hero = ({ loaderComplete }) => {
               className="text-[13.5vw] sm:text-[14.5vw] md:text-[14vw] lg:text-[13vw] font-black uppercase font-condensed tracking-tight text-white whitespace-nowrap drop-shadow-[0_10px_35px_rgba(0,0,0,0.9)] will-change-transform"
               style={{ fontFamily: "'Bebas Neue', 'Anton', sans-serif" }}
             >
-              YES, 
+              YES, I AM A
             </h1>
           </div>
 
