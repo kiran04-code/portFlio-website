@@ -1,0 +1,274 @@
+/* All new presentation rules are scoped below the locked hero.
+   App.css, index.css, the navigation, and Hero.jsx remain unchanged. */
+.after-hero {
+  --motion-ink: #f2f2f2;
+  --motion-muted: #939399;
+  --motion-line: #29292c;
+  color: var(--motion-ink);
+}
+.after-hero .motion-section { position: relative; background: #000; scroll-margin-top: 84px; border-top: 1px solid var(--motion-line); }
+.after-hero .motion-container { width: 100%; max-width: 1600px; margin-inline: auto; padding-inline: clamp(24px, 3.4vw, 64px); }
+.after-hero .motion-section-label { display: flex; justify-content: space-between; align-items: center; gap: 24px; font: 10px/1.7 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 1.7px; color: #c4c4c9; }
+.after-hero .motion-section-label p > span { color: #77777e; margin-right: 18px; }
+.after-hero .motion-section-label > span { color: #88888f; font-size: 9px; letter-spacing: 1.1px; text-align: right; }
+.after-hero .motion-caption { display: block; color: #8f8f97; font: 9px/1.9 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 1.1px; }
+.after-hero .motion-title { font-size: clamp(34px, 4.1vw, 64px); font-weight: 500; line-height: 1.08; letter-spacing: -.065em; }
+.after-hero .motion-title > span { color: #85858d; }
+.after-hero .motion-link { position: relative; display: inline-flex; min-height: 44px; align-items: center; justify-content: space-between; gap: 26px; color: #f2f2f2; font-size: 12px; }
+.after-hero .motion-link::after { content: ''; position: absolute; bottom: 5px; left: 0; right: 0; height: 1px; background: #aaaab0; transform-origin: left; transform: scaleX(.25); transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+.after-hero .motion-link:hover::after { transform: scaleX(1); }
+.after-hero .motion-link svg { transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+.after-hero .motion-link:hover svg { transform: translate(3px, -3px); }
+.after-hero .motion-links { display: flex; gap: 34px; margin-top: 18px; }
+.after-hero :is(a, button, input, textarea, summary):focus-visible { outline: 2px solid #ddd; outline-offset: 6px; }
+.after-hero .motion-details { border-top: 1px solid var(--motion-line); }
+.after-hero .motion-details summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 52px; cursor: pointer; color: #a5a5ad; font: 10px/1.6 'JetBrains Mono', monospace; list-style: none; }
+.after-hero .motion-details summary::-webkit-details-marker { display: none; }
+.after-hero .motion-details summary > span { font: 22px 'Space Grotesk', sans-serif; transition: transform .3s; }
+.after-hero .motion-details[open] summary > span { transform: rotate(45deg); }
+.after-hero .motion-details summary:hover { color: #fff; }
+.after-hero .motion-sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; padding: 0; clip-path: inset(50%); white-space: nowrap; }
+
+/* A pinned editorial spread with a left-to-right ink reveal. */
+.after-hero .about-stage { min-height: 660px; height: calc(100svh - 84px); max-height: 1100px; padding-top: 38px; padding-bottom: 56px; display: flex; flex-direction: column; justify-content: space-between; gap: 42px; background: #000; }
+.after-hero .about-display { padding-block: 15px; }
+.after-hero .about-intro-label { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 36px; color: #a2a2a8; font-size: 11px; line-height: 1.6; }
+.after-hero .about-intro-label svg { color: #dfdfe3; }
+.after-hero .about-display h2 { font-size: clamp(56px, 7.9vw, 128px); line-height: 1.07; font-weight: 500; letter-spacing: -.072em; }
+.after-hero .about-display-line { display: block; position: relative; width: fit-content; color: #343437; white-space: nowrap; }
+.after-hero .about-display-line:nth-child(2) { margin-left: 8.5%; }
+.after-hero .about-ink { position: absolute; inset: 0; color: #f2f2f2; }
+.after-hero .about-display-line:nth-child(2) .about-ink { color: #b1b1b7; }
+.after-hero .about-bottom { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 50px; padding-top: 28px; border-top: 1px solid var(--motion-line); align-items: start; }
+.after-hero .about-footnote > p { font-size: 13px; line-height: 1.85; margin-top: 10px; color: #d0d0d5; }
+.after-hero .about-footnote > span:last-child { display: block; font-size: 11px; line-height: 1.7; margin-top: 5px; color: #929299; max-width: 280px; }
+.after-hero .about-bio > p { margin-top: 0; color: #929299; }
+.after-hero .about-bio strong { font-weight: 400; color: #e4e4e7; }
+.after-hero .about-more { padding-block: 20px 72px; }
+.after-hero .about-detail-content { padding-block: 15px 30px; }
+.after-hero .about-detail-content > p { max-width: 680px; color: #a2a2aa; font-size: 14px; line-height: 1.9; }
+.after-hero .about-disciplines { display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; margin-top: 40px; }
+.after-hero .about-disciplines h3 { font-size: 17px; font-weight: 500; }
+.after-hero .about-disciplines p { font-size: 13px; line-height: 1.8; margin-block: 12px 18px; color: #96969e; }
+
+/* Experience is a continuous rail, with contributions available on demand. */
+.after-hero .editorial-experience { padding-block: 48px 120px; }
+.after-hero .experience-layout { display: grid; grid-template-columns: .85fr 1.55fr; gap: 90px; margin-top: 90px; }
+.after-hero .experience-intro .motion-link { margin-top: 28px; }
+.after-hero .experience-entries { position: relative; }
+.after-hero .experience-track { position: absolute; width: 1px; top: 7px; bottom: 0; left: 0; background: #242427; }
+.after-hero .experience-progress { height: 100%; background: #babac0; transform-origin: top; }
+.after-hero .experience-entry { position: relative; padding: 0 0 60px 40px; }
+.after-hero .experience-entry + .experience-entry { padding-top: 45px; }
+.after-hero .experience-entry + .experience-entry .experience-node { top: 52px; }
+.after-hero .experience-node { position: absolute; top: 7px; left: -3px; height: 7px; width: 7px; background: #fff; border-radius: 50%; }
+.after-hero .experience-period { display: flex; justify-content: space-between; gap: 12px; font: 9px/1.8 'JetBrains Mono', monospace; color: #a7a7af; letter-spacing: .8px; text-transform: uppercase; margin-bottom: 25px; }
+.after-hero .experience-period > span:last-child { color: #85858e; }
+.after-hero .experience-company { font-size: clamp(28px, 3.1vw, 46px); letter-spacing: -.055em; line-height: 1.15; font-weight: 500; overflow: hidden; padding-bottom: 5px; }
+.after-hero .experience-company > span { display: block; }
+.after-hero .experience-role { font-size: 12px; color: #cacad0; margin-top: 10px; }
+.after-hero .experience-one-line { font-size: 13px; line-height: 1.8; color: #929299; max-width: 420px; margin-top: 24px; }
+.after-hero .experience-number { position: absolute; right: 0; bottom: 40px; font: 100px/.9 'Bebas Neue', sans-serif; color: #171719; pointer-events: none; z-index: 0; }
+.after-hero .experience-entry-body { position: relative; z-index: 1; }
+.after-hero .experience-details { margin-top: 30px; }
+.after-hero .experience-expanded { padding-block: 8px 24px; background: #000; }
+.after-hero .experience-expanded p, .after-hero .experience-expanded li { color: #a1a1aa; font-size: 12px; line-height: 1.9; }
+.after-hero .experience-expanded ul { padding-left: 18px; list-style: disc; margin-block: 20px; }
+.after-hero .experience-expanded li + li { margin-top: 10px; }
+.after-hero .experience-expanded .experience-tech { font: 10px/2 'JetBrains Mono', monospace; color: #c2c2c9; margin-bottom: 16px; }
+
+/* One viewport, six project chapters. Normal document flow is the fallback. */
+.after-hero .work-intro { padding-top: 46px; padding-bottom: 64px; }
+.after-hero .work-heading { display: flex; justify-content: space-between; gap: 32px; overflow: hidden; font: 400 clamp(100px, 15.5vw, 248px)/.98 'Bebas Neue', 'Anton', sans-serif; letter-spacing: -.018em; text-transform: uppercase; margin-top: 62px; padding-top: 8px; }
+.after-hero .work-heading > span { display: inline-block; }
+.after-hero .work-heading > span:last-child { color: #939399; white-space: nowrap; }
+.after-hero .work-count { vertical-align: top; display: inline-block; font: 12px 'JetBrains Mono', monospace; letter-spacing: -.5px; margin: 10px 0 0 14px; color: #a0a0a8; }
+.after-hero .work-intro-bottom { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 30px; color: #a0a0a8; font-size: 12px; }
+.after-hero .work-intro-bottom > span { display: flex; align-items: center; gap: 16px; font: 9px 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 1px; }
+.after-hero .project-stage { position: relative; background: #000; padding-bottom: 32px; }
+.after-hero .project-stage.is-pinned { height: calc(100svh - 84px); min-height: 600px; display: grid; grid-template-rows: 76px minmax(0, 1fr) 56px 1px; padding-bottom: 22px; }
+.after-hero .project-stage-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 76px; border-top: 1px solid var(--motion-line); font: 11px 'JetBrains Mono', monospace; }
+.after-hero .project-total { color: #686871; }
+.after-hero .project-steps { display: flex; gap: 6px; }
+.after-hero .project-step { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid transparent; border-radius: 50%; font: 10px 'JetBrains Mono', monospace; color: #92929a; cursor: pointer; transition: background .3s, color .3s, border-color .3s; }
+.after-hero .project-step[aria-current] { color: #fff; border-color: #6d6d75; }
+.after-hero .project-step:hover { background: #f0f0f0; color: #111; }
+.after-hero .project-scroll-label { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: #92929a; }
+.after-hero .project-panels { position: relative; min-width: 0; }
+.after-hero .project-panel { position: relative; display: grid; grid-template-columns: minmax(0, .88fr) minmax(0, 2fr); gap: 36px; align-items: center; min-height: 600px; padding-block: 30px; scroll-margin-top: 100px; }
+.after-hero .project-panel + .project-panel { border-top: 1px solid var(--motion-line); }
+.after-hero .is-pinned .project-panel { position: absolute; inset: 0; min-height: 0; height: 100%; padding-block: 0; border: none; }
+.after-hero .project-panel[data-active="false"] { pointer-events: none; }
+.after-hero .project-copy { min-width: 0; padding-right: 12px; }
+.after-hero .project-kicker { display: flex; align-items: center; gap: 14px; font: 9px/1.6 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: .8px; color: #96969f; margin-bottom: 32px; }
+.after-hero .project-kicker > span { color: #e3e3e6; }
+.after-hero .project-title { font-size: clamp(32px, 3.65vw, 59px); line-height: 1.08; letter-spacing: -.07em; font-weight: 500; margin-bottom: 24px; }
+.after-hero .project-word-mask { display: inline-block; vertical-align: top; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; max-width: 100%; }
+.after-hero .project-word-mask > span { display: inline-block; }
+.after-hero .project-description { max-width: 310px; color: #a4a4ad; font-size: 12px; line-height: 1.9; }
+.after-hero .project-stack { display: flex; flex-wrap: wrap; gap: 8px 0; list-style: none; padding: 0; margin-top: 28px; max-width: 310px; }
+.after-hero .project-stack li { color: #babac2; font: 9px/1.6 'JetBrains Mono', monospace; }
+.after-hero .project-stack li + li::before { content: '/'; color: #55555e; margin-inline: 10px; }
+.after-hero .project-links { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 34px; }
+.after-hero .project-primary-link { margin-right: 16px; gap: 30px; }
+.after-hero .project-icon-link { display: grid; place-items: center; width: 44px; height: 44px; color: #a1a1aa; border: 1px solid #2d2d32; border-radius: 50%; transition: color .3s, border-color .3s; }
+.after-hero .project-icon-link:hover { color: #fff; border-color: #a1a1aa; }
+.after-hero .project-scene { position: relative; height: 100%; min-height: 500px; background: #141415; overflow: hidden; isolation: isolate; }
+.after-hero .is-pinned .project-scene { min-height: 0; }
+.after-hero .project-scene-1 { background: #111114; }
+.after-hero .project-scene-2 { background: #171719; }
+.after-hero .scene-caption, .after-hero .scene-index { position: absolute; z-index: 3; font: 8px/1.7 'JetBrains Mono', monospace; color: #a3a3ab; text-transform: uppercase; letter-spacing: 1.6px; }
+.after-hero .scene-caption { top: 27px; left: 28px; }
+.after-hero .scene-index { bottom: 24px; left: 28px; }
+.after-hero .scene-depth { position: absolute; inset: 0; perspective: 1500px; transform-style: preserve-3d; }
+.after-hero .device-main { position: absolute; top: 17%; left: 7%; width: 84%; transform-style: preserve-3d; }
+.after-hero .device-tilt { transform-style: preserve-3d; border: 1px solid #535358; border-radius: 9px; background: #080808; box-shadow: 0 30px 55px #0008, 5px 7px 0 #252528; }
+.after-hero .device-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 28px; padding: 5px 12px; color: #9a9aa4; font: 8px 'JetBrains Mono', monospace; border-radius: 8px 8px 0 0; background: #222225; border-bottom: 1px solid #333338; }
+.after-hero .device-dots { display: flex; gap: 4px; }
+.after-hero .device-dots i, .after-hero .device-detail-bar i { width: 4px; height: 4px; border-radius: 50%; background: #62626a; }
+.after-hero .device-screen { aspect-ratio: 1.68; overflow: hidden; border-radius: 0 0 8px 8px; background: #0b0b0d; }
+.after-hero .device-screen img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.after-hero .device-detail { position: absolute; right: 4%; bottom: 10%; width: 40%; border: 1px solid #5a5a60; background: #131315; border-radius: 7px; box-shadow: 0 24px 48px #0009; overflow: hidden; transform: rotate(2deg); }
+.after-hero .detail-screen { overflow: hidden; aspect-ratio: 1.5; }
+.after-hero .detail-screen img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.after-hero .device-detail-bar { display: flex; gap: 4px; height: 18px; align-items: center; padding-inline: 9px; background: #28282c; }
+.after-hero .device-phone { width: 20%; max-width: 190px; padding: 6px; border-radius: 24px; right: 5%; bottom: 6%; background: #18181a; box-shadow: 0 25px 50px #0009, 3px 3px 0 #444449; }
+.after-hero .device-phone .detail-screen { aspect-ratio: .475; border-radius: 18px; }
+.after-hero .device-speaker { position: absolute; z-index: 1; top: 8px; left: 35%; width: 30%; height: 9px; border-radius: 0 0 7px 7px; background: #18181a; }
+.after-hero .project-stage-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 20px; color: #8c8c94; font: 8px 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 1.2px; }
+.after-hero .project-stage-bottom > span:last-child { display: flex; gap: 12px; align-items: center; }
+.after-hero .project-progress { height: 1px; background: #2a2a2f; }
+.after-hero .project-progress-fill { height: 100%; width: 100%; transform-origin: left; background: #d8d8dc; }
+
+/* Alternating kinetic type, with a readable complete stack above every row. */
+.after-hero .kinetic-skills { padding-top: 66px; padding-bottom: 90px; }
+.after-hero .skills-heading { margin-top: 65px; margin-bottom: 64px; }
+.after-hero .kinetic-row { position: relative; padding-block: 24px 32px; overflow: hidden; }
+.after-hero .kinetic-rule { position: absolute; top: 0; left: 3.4vw; right: 3.4vw; height: 1px; background: var(--motion-line); }
+.after-hero .kinetic-meta { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 22px; }
+.after-hero .kinetic-meta h3 { font: 10px/1.8 'JetBrains Mono', monospace; color: #dedee3; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+.after-hero .kinetic-meta h3 > span { color: #74747e; margin-right: 20px; }
+.after-hero .kinetic-meta p { text-align: right; max-width: 65%; font: 9px/1.8 'JetBrains Mono', monospace; color: #9696a0; }
+.after-hero .kinetic-window { overflow: hidden; padding-block: 8px; }
+.after-hero .kinetic-type { display: flex; width: max-content; padding-inline: 3.4vw; font-size: clamp(76px, 10.7vw, 172px); line-height: 1.04; font-weight: 500; letter-spacing: -.07em; white-space: nowrap; }
+.after-hero .kinetic-type > span { display: inline-block; }
+.after-hero .kinetic-outline { -webkit-text-stroke: 1px #7a7a84; color: transparent; }
+.after-hero .kinetic-divider { color: #4f4f57; -webkit-text-stroke: 0; display: inline-block; margin-inline: .25em; font-weight: 300; }
+
+/* Contact continues the type hierarchy, with a quiet functional form. */
+.after-hero .contact-section { padding: 64px 0 110px; background: #080808; border-top: 1px solid var(--motion-line); }
+.after-hero .contact-section .section-container { max-width: 1600px; padding-inline: clamp(24px, 3.4vw, 64px); }
+.after-hero .contact-heading { display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-block: 70px 80px; }
+.after-hero .contact-heading h2 { font-size: clamp(64px, 10vw, 156px); line-height: 1.03; letter-spacing: -.075em; font-weight: 500; }
+.after-hero .contact-heading h2 > span { display: block; overflow: hidden; }
+.after-hero .contact-heading h2 > span > span { display: block; }
+.after-hero .contact-heading h2 > span:last-child { color: #8a8a93; }
+.after-hero .contact-heading-link { display: grid; place-items: center; flex-shrink: 0; width: clamp(80px, 12vw, 180px); height: clamp(80px, 12vw, 180px); border: 1px solid #55555c; border-radius: 50%; transition: color .4s, background .4s; }
+.after-hero .contact-heading-link > svg { width: 40%; height: 40%; stroke-width: 1; }
+.after-hero .contact-heading-link:hover { background: #f2f2f2; color: #080808; }
+.after-hero .contact-layout { grid-template-columns: 1fr 1fr; gap: 12%; }
+.after-hero .contact-copy > p { font-size: 13px; margin-top: 0; max-width: 350px; }
+.after-hero .contact-copy .contact-location { margin-top: 24px; }
+.after-hero .contact-form { padding: 0; border: none; border-radius: 0; background: transparent; gap: 28px; }
+.after-hero .contact-form h3 { font-size: 14px; margin-bottom: 8px; font-weight: 400; color: #c9c9d0; }
+.after-hero .contact-form input, .after-hero .contact-form textarea { border: 0; border-bottom: 1px solid #45454d; border-radius: 0; background: transparent; padding: 10px 0 16px; font-size: 12px; }
+.after-hero .contact-form label { font: 9px 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: .8px; color: #aaaab2; }
+.after-hero .contact-form textarea { min-height: 90px; }
+.after-hero .contact-form .portfolio-button { border-radius: 0; background: #e7e7ea; padding: 13px 22px; }
+.after-hero .contact-form .portfolio-button:hover { background: #fff; }
+.after-hero .contact-section .section-eyebrow { letter-spacing: 1.7px; }
+.after-hero .contact-section .section-heading-line { margin-bottom: 0; }
+
+@media (min-width: 1600px) {
+  .after-hero .device-main { top: 14%; }
+}
+@media (max-width: 999px), (max-height: 699px) {
+  .after-hero .about-stage { height: auto; min-height: 0; max-height: none; padding-block: 38px 50px; gap: 70px; }
+  .after-hero .about-display h2 { font-size: clamp(46px, 8vw, 110px); }
+  .after-hero .about-bottom { gap: 30px; }
+  .after-hero .experience-layout { gap: 40px; grid-template-columns: .9fr 1.5fr; }
+  .after-hero .experience-entry { padding-left: 28px; }
+  .after-hero .project-stage-toolbar > p { visibility: hidden; }
+  .after-hero .project-panel { grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr); gap: 24px; min-height: 480px; padding-block: 60px; }
+  .after-hero .project-title { font-size: clamp(30px, 4vw, 50px); }
+  .after-hero .project-scene { min-height: 420px; }
+  .after-hero .device-main { top: 24%; }
+  .after-hero .device-detail { bottom: 14%; }
+  .after-hero .project-kicker { font-size: 8px; margin-bottom: 22px; }
+  .after-hero .contact-layout { gap: 60px; }
+}
+@media (max-width: 700px) {
+  .after-hero .motion-section { scroll-margin-top: 72px; }
+  .after-hero .motion-container { padding-inline: 22px; }
+  .after-hero .motion-section-label { font-size: 9px; }
+  .after-hero .motion-section-label > span { font-size: 8px; max-width: 145px; letter-spacing: .4px; }
+  .after-hero .motion-section-label p > span { margin-right: 10px; }
+  .after-hero .about-stage { gap: 60px; padding-top: 30px; padding-bottom: 28px; }
+  .after-hero .about-intro-label { font-size: 10px; margin-bottom: 25px; }
+  .after-hero .about-display h2 { font-size: 8.7vw; letter-spacing: -.067em; }
+  .after-hero .about-display-line:nth-child(2) { margin-left: 3%; }
+  .after-hero .about-bottom { grid-template-columns: 1fr 1fr; gap: 30px 20px; }
+  .after-hero .about-bio { grid-column: 1 / -1; }
+  .after-hero .about-footnote > p { font-size: 12px; }
+  .after-hero .about-footnote > span:last-child { font-size: 10px; }
+  .after-hero .about-more { padding-bottom: 50px; }
+  .after-hero .about-disciplines { grid-template-columns: 1fr; gap: 26px; }
+  .after-hero .editorial-experience { padding-block: 32px 65px; }
+  .after-hero .experience-layout { grid-template-columns: 1fr; gap: 55px; margin-top: 50px; }
+  .after-hero .experience-intro { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
+  .after-hero .experience-intro .motion-link { font-size: 10px; gap: 10px; white-space: nowrap; }
+  .after-hero .experience-entry { padding-left: 23px; padding-bottom: 42px; }
+  .after-hero .experience-company { font-size: clamp(26px, 6.7vw, 42px); }
+  .after-hero .experience-period { font-size: 8px; letter-spacing: 0; }
+  .after-hero .experience-role { font-size: 11px; }
+  .after-hero .experience-one-line { font-size: 12px; }
+  .after-hero .work-intro { padding-top: 32px; padding-bottom: 20px; }
+  .after-hero .work-heading { font-size: 15.3vw; gap: 12px; margin-top: 42px; }
+  .after-hero .work-count { font-size: 8px; margin: 4px 0 0 6px; }
+  .after-hero .work-intro-bottom { font-size: 10px; margin-top: 22px; }
+  .after-hero .work-intro-bottom > span { font-size: 8px; gap: 8px; letter-spacing: 0; }
+  .after-hero .project-stage-toolbar { justify-content: center; height: 70px; border: 0; }
+  .after-hero .project-stage-toolbar > p, .after-hero .project-scroll-label { display: none; }
+  .after-hero .project-step { width: 42px; height: 42px; }
+  .after-hero .project-panel { display: flex; flex-direction: column-reverse; align-items: stretch; min-height: 0; gap: 30px; padding-block: 36px 50px; scroll-margin-top: 72px; }
+  .after-hero .project-panel:first-child { padding-top: 0; }
+  .after-hero .project-scene { height: 100vw; max-height: 560px; min-height: 300px; }
+  .after-hero .scene-caption { top: 19px; left: 18px; font-size: 7px; letter-spacing: .8px; }
+  .after-hero .scene-index { bottom: 19px; left: 18px; font-size: 7px; }
+  .after-hero .device-main { width: 90%; left: 4%; top: 23%; }
+  .after-hero .device-bar { min-height: 22px; font-size: 6px; padding-inline: 8px; }
+  .after-hero .device-tilt { border-radius: 6px; box-shadow: 0 20px 30px #0008, 3px 4px 0 #252528; }
+  .after-hero .device-detail { width: 47%; bottom: 16%; right: 4%; }
+  .after-hero .device-phone { width: 25%; bottom: 12%; right: 5%; border-radius: 15px; padding: 4px; }
+  .after-hero .device-phone .detail-screen { border-radius: 11px; }
+  .after-hero .device-speaker { top: 5px; height: 6px; }
+  .after-hero .project-copy { padding-right: 0; }
+  .after-hero .project-kicker { margin-bottom: 16px; font-size: 8px; }
+  .after-hero .project-title { font-size: clamp(36px, 10vw, 58px); margin-bottom: 16px; }
+  .after-hero .project-description { max-width: 460px; font-size: 12px; }
+  .after-hero .project-stack { margin-top: 20px; max-width: none; }
+  .after-hero .project-links { margin-top: 22px; }
+  .after-hero .project-stage-bottom { font-size: 7px; letter-spacing: .4px; }
+  .after-hero .kinetic-skills { padding-block: 36px 50px; }
+  .after-hero .skills-heading { margin-top: 44px; margin-bottom: 42px; }
+  .after-hero .kinetic-row { padding-block: 21px 26px; }
+  .after-hero .kinetic-rule { left: 22px; right: 22px; }
+  .after-hero .kinetic-meta { flex-direction: column; gap: 8px; margin-bottom: 16px; }
+  .after-hero .kinetic-meta h3 { font-size: 9px; }
+  .after-hero .kinetic-meta p { text-align: left; max-width: 100%; font-size: 8px; }
+  .after-hero .kinetic-type { font-size: 22vw; padding-inline: 22px; }
+  .after-hero .contact-section { padding-block: 36px 70px; }
+  .after-hero .contact-section .section-container { padding-inline: 22px; }
+  .after-hero .contact-heading { margin-block: 50px; gap: 14px; }
+  .after-hero .contact-heading h2 { font-size: 12.4vw; }
+  .after-hero .contact-heading-link { width: 64px; height: 64px; }
+  .after-hero .contact-layout { grid-template-columns: 1fr; gap: 50px; }
+  .after-hero .contact-form-row { grid-template-columns: 1fr; gap: 26px; }
+  .after-hero .contact-email { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .after-hero *, .after-hero *::before, .after-hero *::after { animation: none !important; transition: none !important; }
+  .after-hero .project-stage-toolbar > p { visibility: hidden; }
+  .after-hero .kinetic-type { flex-wrap: wrap; width: auto; white-space: normal; gap: 10px; font-size: clamp(42px, 7vw, 100px); }
+  .after-hero .kinetic-type > span { white-space: nowrap; }
+}

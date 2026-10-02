@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "./App.css";
+import "./scroll-experience.css";
+import AfterHero from "./components/AfterHero";
 import SmoothScroll from "./components/SmoothScroll";
 import CustomCursor from "./components/CustomCursor";
 import Reloader from "./components/reloader";
 import Navbar from "./components/navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import KhanaavalStory from "./components/KhanaavalStory";
 import Experience from "./components/Experience";
 import ProjectShowcase from "./components/ProjectShowcase";
 import TechUniverse from "./components/TechUniverse";
@@ -24,29 +25,16 @@ function App() {
         <Navbar />
 
         <main>
-          {/* 1. Cinematic Hero with Monumental Typography & Parallax Portrait */}
           <Hero loaderComplete={loaderComplete} />
-
-          {/* 2. Engineering Biography & Technical Philosophy */}
+          <AfterHero>
           <About />
-
-          {/* 3. Flagship Production Case Study: Khanaaval.com */}
-          <KhanaavalStory />
-
-          {/* 4. Professional Industry Experience Timeline */}
           <Experience />
-
-          {/* 5. Editorial Selected Projects Archive */}
           <ProjectShowcase />
-
-          {/* 6. Interactive Technical Universe / Skills Ecosystem */}
           <TechUniverse />
-
-          {/* 7. Cinematic Contact & Inquiry Section */}
           <ContactSection />
+          </AfterHero>
         </main>
 
-        {/* 8. Luxury Editorial Footer */}
         <Footer />
       </div>
     </SmoothScroll>

@@ -1,54 +1,9 @@
-import React, { useEffect, useRef } from "react";
-import { MapPin, CheckCircle2 } from "lucide-react";
+import { useCallback, useRef } from "react";
+import { ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useScrollMotion from "../hooks/useScrollMotion";
 
-gsap.registerPlugin(ScrollTrigger);
-
-const Experience = () => {
-  const containerRef = useRef(null);
-  const lineRef = useRef(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Timeline line progress animation
-      gsap.fromTo(
-        lineRef.current,
-        { scaleY: 0 },
-        {
-          scaleY: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 70%",
-            end: "bottom 70%",
-            scrub: true,
-          },
-        }
-      );
-
-      // Cards stagger reveal
-      gsap.fromTo(
-        containerRef.current?.querySelectorAll(".experience-card") || [],
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.9,
-          stagger: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 75%",
-          },
-        }
-      );
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
-
-  const experiences = [
+const experiences = [
     {
       period: "2026 — Present",
       role: "Full-Stack Developer & DevOps Engineer",
@@ -83,120 +38,64 @@ const Experience = () => {
     },
   ];
 
+export default function Experience() {
+  const root = useRef(null);
+  const animate = useCallback(() => {
+    const section = root.current;
+    gsap.from(section.querySelector(".experience-progress"), {
+      scaleY: 0,
+      transformOrigin: "top",
+      ease: "none",
+      scrollTrigger: { trigger: section.querySelector(".experience-entries"), start: "top 70%", end: "bottom 65%", scrub: 0.5 },
+    });
+    section.querySelectorAll(".experience-entry").forEach((entry) => {
+      const timeline = gsap.timeline({
+        scrollTrigger: { trigger: entry, start: "top 85%", end: "top 35%", scrub: 0.65 },
+      });
+      timeline
+        .from(entry.querySelector(".experience-company span"), { yPercent: 110, rotate: 3, transformOrigin: "left bottom", ease: "power2.out", duration: 1 }, 0)
+        .from(entry.querySelector(".experience-entry-body"), { x: 32, ease: "power2.out", duration: 1 }, 0)
+        .fromTo(entry.querySelector(".experience-node"), { scale: 0.4, backgroundColor: "#27272a" }, { scale: 1, backgroundColor: "#ffffff", duration: 0.3 }, 0.2)
+        .from(entry.querySelector(".experience-number"), { y: 35, duration: 1, ease: "none" }, 0);
+    });
+  }, []);
+  useScrollMotion(root, animate);
+
   return (
-    <section
-      ref={containerRef}
-      id="experience"
-      className="relative w-full py-20 sm:py-28 md:py-40 bg-black text-white border-t border-white/[0.08] overflow-hidden"
-    >
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 relative z-10">
-        
-        {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16 md:mb-28 border-b border-white/[0.08] pb-8">
-          <div>
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-2 h-2 rounded-full bg-white" />
-              <span className="text-xs font-mono uppercase tracking-[0.3em] text-zinc-400">
-                Career Trajectory
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl md:text-7xl font-black uppercase tracking-tight font-display break-words">
-              PROFESSIONAL <span className="text-zinc-600">EXPERIENCE.</span>
-            </h2>
+    <section id="experience" className="motion-section editorial-experience" ref={root} aria-labelledby="experience-title">
+      <div className="motion-container">
+        <div className="motion-section-label"><p><span>02 /</span> Experience</p><span>Building with purpose</span></div>
+        <div className="experience-layout">
+          <div className="experience-intro">
+            <h2 id="experience-title" className="motion-title">Where I’ve<br /><span>contributed.</span></h2>
+            <a className="motion-link" href="/kiran.rathod.pdf" target="_blank" rel="noopener noreferrer">View resume <ArrowUpRight size={16} aria-hidden="true" /></a>
           </div>
-
-          <p className="text-zinc-400 text-xs md:text-sm font-mono max-w-sm">
-            Proven track record designing scalable software architectures and deploying production cloud infrastructure.
-          </p>
-        </div>
-
-        {/* Timeline Container */}
-        <div className="relative pl-4 sm:pl-8 md:pl-12">
-          
-          {/* Animated Vertical Line */}
-          <div
-            ref={lineRef}
-            className="absolute left-0 top-0 w-[2px] h-full bg-gradient-to-b from-white via-zinc-400 to-zinc-800 origin-top"
-          />
-
-          <div className="space-y-12 sm:space-y-16 md:space-y-24">
-            {experiences.map((exp, idx) => (
-              <div key={idx} className="experience-card relative">
-                
-                {/* Node indicator */}
-                <div className="absolute -left-[23px] sm:-left-[39px] md:-left-[55px] top-2 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-black border-2 border-white flex items-center justify-center">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+          <div className="experience-entries">
+            <div className="experience-track" aria-hidden="true"><div className="experience-progress" /></div>
+            {experiences.map((exp, index) => (
+              <article className="experience-entry" key={exp.company}>
+                <span className="experience-node" aria-hidden="true" />
+                <div className="experience-entry-body">
+                  <div className="experience-period"><span>{exp.period}</span><span>{exp.type}</span></div>
+                  <h3 className="experience-company"><span>{exp.company}</span></h3>
+                  <p className="experience-role">{exp.role}</p>
+                  <p className="experience-one-line">{index === 0 ? "Enterprise platforms. Reliable backends. Automated infrastructure." : "From an idea to a food-tech platform serving 300+ daily students."}</p>
+                  <details className="motion-details experience-details">
+                    <summary>Explore contributions <span aria-hidden="true">+</span></summary>
+                    <div className="experience-expanded">
+                      <p>{exp.description}</p>
+                      <ul>{exp.highlights.map(point => <li key={point}>{point}</li>)}</ul>
+                      <p className="experience-tech">{exp.tech.join(" / ")}</p>
+                      <span className="motion-caption">{exp.location}</span>
+                    </div>
+                  </details>
                 </div>
-
-                {/* Content Box */}
-                <div className="p-5 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-white/20 transition-all duration-300">
-                  
-                  {/* Top metadata */}
-                  <div className="flex flex-wrap items-center justify-between gap-3 mb-4 sm:mb-6">
-                    <div className="flex items-center gap-2 sm:gap-3">
-                      <span className="px-3 py-1 rounded-full bg-white text-black font-mono text-[11px] sm:text-xs font-bold tracking-wider uppercase">
-                        {exp.period}
-                      </span>
-                      <span className="px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 font-mono text-[11px] sm:text-xs text-zinc-400 uppercase">
-                        {exp.type}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center gap-2 text-xs font-mono text-zinc-500">
-                      <MapPin size={13} />
-                      <span>{exp.location}</span>
-                    </div>
-                  </div>
-
-                  {/* Role & Company */}
-                  <h3 className="text-xl sm:text-2xl md:text-4xl font-black text-white tracking-tight font-display mb-1 break-words">
-                    {exp.role}
-                  </h3>
-                  <p className="text-base sm:text-lg md:text-xl text-zinc-400 font-medium mb-4 sm:mb-6">
-                    {exp.company}
-                  </p>
-
-                  <p className="text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed mb-6 sm:mb-8 max-w-3xl">
-                    {exp.description}
-                  </p>
-
-                  {/* Highlights */}
-                  <div className="space-y-3 mb-6 sm:mb-8">
-                    <p className="text-xs font-mono uppercase tracking-widest text-zinc-500">
-                      Key Technical Contributions:
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3">
-                      {exp.highlights.map((point, pIdx) => (
-                        <div key={pIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-400">
-                          <CheckCircle2 size={15} className="text-white shrink-0 mt-0.5" />
-                          <span className="leading-relaxed">{point}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Technology Tags */}
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-4 sm:pt-6 border-t border-white/[0.06]">
-                    {exp.tech.map((t, tIdx) => (
-                      <span
-                        key={tIdx}
-                        className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-lg bg-white/[0.03] border border-white/[0.08] font-mono text-[10px] sm:text-[11px] text-zinc-300"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-              </div>
+                <span className="experience-number" aria-hidden="true">0{index + 1}</span>
+              </article>
             ))}
           </div>
-
         </div>
-
       </div>
     </section>
   );
-};
-
-export default Experience;
+}
