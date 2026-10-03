@@ -45,7 +45,7 @@ const projects = [
     tech: ["React", "Node.js", "MongoDB"], image: images.Project3, detail: images.img2_proj3,
     domain: "vitacademic / resources",
     accent: "#d4c4ef", tint: "#231e2b",
-  }
+  },
 ].map(project => {
   const details = projetcs.find(item => item.name === project.id)
   return {
