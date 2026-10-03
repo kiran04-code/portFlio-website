@@ -119,7 +119,7 @@ const Navbar = () => {
           >
             <span className="brand-monogram" aria-hidden="true">kr<span>.</span></span>
             <span className="brand-copy">
-              <span className="brand-name">Kiran Rathod<span>.</span></span>
+              <span className="brand-name"> Rathod<span>.</span></span>
               <span className="brand-role">Software Engineer</span>
             </span>
           </a>
