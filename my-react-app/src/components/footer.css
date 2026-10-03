@@ -1,0 +1,67 @@
+.portfolio-footer.signature-footer { --footer-paper: #d6f37b; padding: 0; border-top: 0; background: var(--footer-paper); color: #171d10; overflow: hidden; }
+.signature-footer .footer-ticker { overflow: hidden; padding-block: 14px; background: #1a2113; color: var(--footer-paper); }
+.signature-footer .footer-ticker-track { display: flex; align-items: center; width: max-content; gap: 40px; }
+.signature-footer .footer-ticker-track > span { display: flex; align-items: center; gap: 32px; font: 500 18px/1.3 'Space Grotesk', sans-serif; letter-spacing: -.5px; }
+.signature-footer .footer-ticker-track > span > span { font-size: 25px; }
+.signature-footer .footer-ticker-track svg { width: 24px; }
+.signature-footer .footer-shell { max-width: 1600px; margin-inline: auto; padding: 32px clamp(24px, 3.4vw, 64px) 20px; }
+.signature-footer .footer-topline { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-bottom: 28px; border-bottom: 1px solid #26301d33; font: 9px/1.7 'JetBrains Mono', monospace; letter-spacing: 1px; text-transform: uppercase; }
+.signature-footer .footer-topline > span { display: flex; align-items: center; gap: 12px; }
+.signature-footer .footer-topline i { width: 6px; height: 6px; background: #476e2a; border-radius: 50%; }
+.signature-footer .footer-local-time { color: #59624f; font-variant-numeric: tabular-nums; }
+.signature-footer .footer-connect { display: grid; grid-template-columns: minmax(0, 2.3fr) 0.6fr 0.6fr; align-items: center; gap: 7%; padding-block: 44px 50px; }
+.signature-footer .footer-invitation > p { font-size: 12px; color: #58604f; margin-bottom: 14px; }
+.signature-footer .footer-hello { position: relative; display: block; width: fit-content; font: 600 clamp(45px, 6.6vw, 102px)/.99 'Space Grotesk', sans-serif; letter-spacing: -.075em; padding-right: .5em; }
+.signature-footer .footer-hello-line { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.04em; }
+.signature-footer .footer-hello-line > span { display: block; }
+.signature-footer .footer-hello-line:nth-child(2) { color: transparent; -webkit-text-stroke: 1.5px #253116; transition: color .3s; }
+.signature-footer .footer-hello:hover .footer-hello-line:nth-child(2) { color: #253116; }
+.signature-footer .footer-hello-dot { color: #253116; }
+.signature-footer .footer-hello-arrow { position: absolute; right: -.7em; bottom: .05em; display: grid; place-items: center; width: .85em; height: .85em; border: 1px solid #253116; border-radius: 50%; transform: rotate(-12deg); transition: transform .35s, background .35s, color .35s; }
+.signature-footer .footer-hello-arrow > svg { width: 65%; height: 65%; stroke-width: 1.3; }
+.signature-footer .footer-hello:hover .footer-hello-arrow { transform: rotate(0); background: #253116; color: var(--footer-paper); }
+.signature-footer .footer-email { display: inline-block; font-size: 12px; margin-top: 20px; text-underline-offset: 5px; overflow-wrap: anywhere; }
+.signature-footer .footer-email:hover { text-decoration: underline; }
+.signature-footer .footer-directory { padding-top: 4px; }
+.signature-footer .footer-directory > p { color: #5a6353; font: 9px 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 1.4px; margin-bottom: 16px; }
+.signature-footer .footer-directory > a { display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 12px; min-height: 40px; border-bottom: 1px solid #26301d22; transition: color .2s; }
+.signature-footer .footer-directory > a:hover { color: #557c30; }
+.signature-footer .footer-directory svg { transition: transform .3s; }
+.signature-footer .footer-directory a:hover svg { transform: translate(2px, -2px); }
+.signature-footer .footer-signature { display: flex; align-items: center; justify-content: space-between; gap: 3%; padding-bottom: 28px; }
+.signature-footer .footer-signature-name { display: flex; min-width: 0; font: 500 clamp(42px, 10.7vw, 171px)/.95 'Space Grotesk', sans-serif; letter-spacing: -.08em; white-space: nowrap; }
+.signature-footer .footer-signature-mask { display: inline-block; overflow: hidden; padding-block: .1em; margin-block: -.1em; }
+.signature-footer .footer-signature-letter { display: inline-block; }
+.signature-footer .footer-orbit-mark { width: clamp(44px, 9.3vw, 148px); flex-shrink: 0; stroke: currentColor; stroke-width: 1; color: #3e5425; }
+.signature-footer .footer-colophon { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 14px; border-top: 1px solid #26301d33; color: #4b5542; font: 9px/1.7 'JetBrains Mono', monospace; }
+.signature-footer .footer-actions { display: flex; gap: 28px; }
+.signature-footer .footer-actions button { display: flex; align-items: center; gap: 9px; min-height: 44px; cursor: pointer; }
+.signature-footer .footer-actions button:hover { color: #151b10; }
+.signature-footer :focus-visible { outline: 2px solid #3a5625; outline-offset: 5px; }
+@media (max-width: 900px) {
+  .signature-footer .footer-connect { gap: 6%; grid-template-columns: 1.8fr .8fr .8fr; }
+  .signature-footer .footer-hello { font-size: 5.7vw; }
+  .signature-footer .footer-colophon > span { display: none; }
+}
+@media (max-width: 600px) {
+  .signature-footer .footer-shell { padding: 24px 22px 14px; }
+  .signature-footer .footer-topline { align-items: flex-start; font-size: 8px; letter-spacing: .3px; }
+  .signature-footer .footer-topline > span:last-child { flex-direction: column; align-items: flex-end; gap: 3px; flex-shrink: 0; }
+  .signature-footer .footer-topline > span:first-child { max-width: 180px; }
+  .signature-footer .footer-topline i { flex-shrink: 0; }
+  .signature-footer .footer-connect { grid-template-columns: 1fr 1fr; gap: 38px 32px; padding-block: 38px 44px; }
+  .signature-footer .footer-invitation { grid-column: 1 / -1; }
+  .signature-footer .footer-hello { font-size: 11.7vw; }
+  .signature-footer .footer-ticker { padding-block: 11px; }
+  .signature-footer .footer-ticker-track > span { font-size: 14px; gap: 22px; }
+  .signature-footer .footer-email { margin-top: 15px; font-size: 11px; }
+  .signature-footer .footer-signature { gap: 12px; padding-bottom: 24px; }
+  .signature-footer .footer-signature-name { font-size: 9.5vw; }
+  .signature-footer .footer-orbit-mark { width: 10vw; }
+  .signature-footer .footer-colophon { flex-direction: column; align-items: stretch; gap: 8px; font-size: 8px; }
+  .signature-footer .footer-actions { justify-content: space-between; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .signature-footer *, .signature-footer *::before, .signature-footer *::after { transition: none !important; animation: none !important; }
+  .signature-footer .footer-replay { display: none; }
+}

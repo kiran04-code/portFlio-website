@@ -1,0 +1,60 @@
+.portfolio-intro { --intro-accent: #d6f39a; position: fixed; inset: 0; z-index: 10000; color: #f3f3f3; overflow: hidden; isolation: isolate; }
+.portfolio-intro .intro-shutters { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(5, 1fr); pointer-events: none; }
+.portfolio-intro .intro-shutter { background: #0c0d0b; border-right: 1px solid #ffffff06; margin-right: -1px; will-change: transform; }
+.portfolio-intro .intro-content { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: clamp(24px, 3.4vw, 56px); }
+.portfolio-intro .intro-top, .portfolio-intro .intro-overline, .portfolio-intro .intro-bottom-row, .portfolio-intro .intro-bottom-caption { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.portfolio-intro .intro-top { padding-bottom: 22px; border-bottom: 1px solid #333336; }
+.portfolio-intro .intro-brand, .portfolio-intro .intro-overline, .portfolio-intro .intro-undername, .portfolio-intro .intro-phase, .portfolio-intro .intro-bottom-caption, .portfolio-intro .intro-skip { font: 10px/1.6 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 1.6px; }
+.portfolio-intro .intro-brand { display: flex; gap: 12px; align-items: center; }
+.portfolio-intro .intro-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--intro-accent); box-shadow: 0 0 16px #d6f39a55; }
+.portfolio-intro .intro-skip { min-height: 44px; color: #a1a1aa; cursor: pointer; transition: color .2s; }
+.portfolio-intro .intro-skip span { margin-left: 10px; }
+.portfolio-intro .intro-skip:hover { color: #fff; }
+.portfolio-intro .intro-skip:focus-visible { outline: 1px solid #fff; outline-offset: 6px; }
+.portfolio-intro .intro-center { position: relative; width: min(100%, 1120px); margin: auto; padding-block: 22px; isolation: isolate; }
+.portfolio-intro .intro-orbit { position: absolute; z-index: -1; width: clamp(150px, 23vw, 310px); aspect-ratio: 1; top: 13%; right: 2%; display: grid; place-items: center; }
+.portfolio-intro .intro-orbit-ring, .portfolio-intro .intro-orbit-track { position: absolute; inset: 0; border: 1px solid #d6f39a44; border-radius: 50%; }
+.portfolio-intro .intro-orbit-ring:nth-child(2) { inset: 12%; border-style: dashed; border-color: #d6f39a28; }
+.portfolio-intro .intro-orbit-ring:nth-child(3) { inset: 24%; border-color: #d6f39a25; }
+.portfolio-intro .intro-orbit-track { border-color: transparent; }
+.portfolio-intro .intro-orbit-track > span { position: absolute; top: 50%; left: -4px; width: 8px; height: 8px; border-radius: 50%; background: var(--intro-accent); box-shadow: 0 0 22px #d6f39a88; }
+.portfolio-intro .intro-orbit-core { font: 500 clamp(30px, 5vw, 72px)/1 'Space Grotesk', sans-serif; letter-spacing: -.09em; color: #aeb9a0; }
+.portfolio-intro .intro-orbit-core > span { color: var(--intro-accent); }
+.portfolio-intro .intro-orbit-caption { position: absolute; bottom: -22px; font: 8px 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 2px; color: #869277; }
+.portfolio-intro .intro-overline { color: #8c8c95; margin-bottom: 22px; font-size: 9px; }
+.portfolio-intro .intro-name { font: 500 clamp(70px, min(14.5vw, 22vh), 220px)/.88 'Space Grotesk', 'Outfit', sans-serif; letter-spacing: -.075em; }
+.portfolio-intro .intro-name-row { display: flex; position: relative; width: fit-content; }
+.portfolio-intro .intro-name-last { margin-left: auto; color: var(--intro-accent); }
+.portfolio-intro .intro-letter-mask { display: inline-block; overflow: hidden; perspective: 650px; padding-top: .13em; padding-bottom: .07em; margin-block: -.04em; }
+.portfolio-intro .intro-letter { display: inline-block; transform-origin: bottom; will-change: transform; }
+.portfolio-intro .intro-name-mark { font: 16px 'Space Grotesk', sans-serif; letter-spacing: 0; margin: .8em 0 0 1em; }
+.portfolio-intro .intro-undername { display: flex; justify-content: flex-end; align-items: center; gap: 20px; color: #a1a1aa; margin-top: 24px; font-size: 9px; }
+.portfolio-intro .intro-connector { width: 70px; height: 1px; background: #5c5c63; }
+.portfolio-intro .intro-bottom-row { align-items: flex-end; margin-bottom: 17px; }
+.portfolio-intro .intro-phase { color: #a1a1aa; }
+.portfolio-intro .intro-counter { font: 400 clamp(28px, 4.2vw, 60px)/1 'Space Grotesk', sans-serif; letter-spacing: -.06em; font-variant-numeric: tabular-nums; }
+.portfolio-intro .intro-counter-total { font: 10px 'JetBrains Mono', monospace; letter-spacing: 0; color: #808089; }
+.portfolio-intro .intro-line { height: 3px; background: #30332a; overflow: hidden; }
+.portfolio-intro .intro-line-fill { width: 100%; height: 100%; background: var(--intro-accent); transform-origin: left; }
+.portfolio-intro .intro-bottom-caption { margin-top: 17px; color: #73737d; font-size: 8px; letter-spacing: 1px; }
+@media (max-width: 600px) {
+  .portfolio-intro .intro-content { padding: 20px 22px 26px; }
+  .portfolio-intro .intro-brand { font-size: 8px; letter-spacing: .7px; gap: 8px; }
+  .portfolio-intro .intro-skip { font-size: 8px; letter-spacing: .5px; }
+  .portfolio-intro .intro-name { font-size: 19.5vw; }
+  .portfolio-intro .intro-orbit { width: 35vw; top: -60%; right: 2%; opacity: .7; }
+  .portfolio-intro .intro-name-mark { font-size: 12px; }
+  .portfolio-intro .intro-overline { font-size: 7px; letter-spacing: 1px; margin-bottom: 24px; }
+  .portfolio-intro .intro-undername { font-size: 7px; gap: 12px; letter-spacing: .8px; }
+  .portfolio-intro .intro-connector { width: 35px; }
+  .portfolio-intro .intro-phase { font-size: 8px; letter-spacing: .6px; }
+}
+@media (max-height: 500px) {
+  .portfolio-intro .intro-content { padding-block: 10px; }
+  .portfolio-intro .intro-top { padding-bottom: 0; }
+  .portfolio-intro .intro-center { padding-block: 8px; }
+  .portfolio-intro .intro-name { font-size: 19vh; }
+  .portfolio-intro .intro-orbit { width: 30vh; top: 0; }
+  .portfolio-intro .intro-overline, .portfolio-intro .intro-undername { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .portfolio-intro { display: none; } }

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
 
@@ -9,62 +9,41 @@ const Hero = ({ loaderComplete }) => {
   const portraitRef = useRef(null);
   const bottomRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    const media = gsap.matchMedia();
     const ctx = gsap.context(() => {
-      const runEntranceAnimation = () => {
-        const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+      const lines = [textLine1Ref.current, textLine2Ref.current];
+      const portrait = portraitRef.current;
+      const bottom = bottomRef.current;
 
-        // Set initial states
-        gsap.set([textLine1Ref.current, textLine2Ref.current], { yPercent: 120, opacity: 0 });
-        gsap.set(portraitRef.current, { y: 50, scale: 0.94, opacity: 0 });
-        gsap.set(bottomRef.current, { y: 30, opacity: 0 });
+      media.add({
+        motion: "(prefers-reduced-motion: no-preference)",
+        reduced: "(prefers-reduced-motion: reduce)",
+      }, ({ conditions }) => {
+        if (conditions.reduced) {
+          gsap.set(portrait, { y: 0, scale: 1 });
+          return;
+        }
 
-        // Monumental background text reveals with kinetic masking
-        tl.to(
-          [textLine1Ref.current, textLine2Ref.current],
-          {
-            yPercent: 0,
-            opacity: 1,
-            duration: 1.2,
-            stagger: 0.15,
-            ease: "power4.out",
-          }
-        )
-        // Portrait smoothly rises in front of the text
-        .to(
-          portraitRef.current,
-          {
-            y: 0,
-            scale: 1,
-            opacity: 1,
-            duration: 1.3,
-            ease: "power3.out",
-          },
-          "-=0.95"
-        )
-        // Bottom story & CTAs fade in
-        .to(
-          bottomRef.current,
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.9,
-            ease: "power2.out",
-          },
-          "-=0.7"
-        );
-      };
+        gsap.set(lines, { yPercent: 115, opacity: 0 });
+        gsap.set(portrait, { y: 44, scale: 1.06, opacity: 0, clipPath: "inset(0 0 100% 0)" });
+        gsap.set(bottom, { y: 22, opacity: 0 });
+        if (!loaderComplete) return;
 
-      if (loaderComplete) {
-        runEntranceAnimation();
-      } else {
-        // Fallback timer if loader was skipped or previously completed
-        const timer = setTimeout(runEntranceAnimation, 250);
-        return () => clearTimeout(timer);
-      }
+        // The loader calls back as its shutters open, so this entrance is
+        // visible rather than running unnoticed behind the loading screen.
+        gsap.timeline({ defaults: { ease: "power4.out" } })
+          .fromTo(lines[0], { xPercent: -3, rotation: 1.5 },
+            { xPercent: 0, rotation: 0, yPercent: 0, opacity: 1, duration: 1.35 }, 0.12)
+          .fromTo(lines[1], { xPercent: 3, rotation: -1 },
+            { xPercent: 0, rotation: 0, yPercent: 0, opacity: 1, duration: 1.45 }, 0.27)
+          .to(portrait, { y: 0, scale: 1, opacity: 1, clipPath: "inset(0 0 0% 0)", duration: 1.55, ease: "power3.inOut" }, 0.22)
+          .to(bottom, { y: 0, opacity: 1, duration: 0.85 }, 1.05)
+          .set([...lines, bottom], { clearProps: "transform,opacity" })
+          .set(portrait, { clearProps: "opacity,clipPath" });
+      });
     }, containerRef);
-
-    return () => ctx.revert();
+    return () => { media.revert(); ctx.revert(); };
   }, [loaderComplete]);
 
   const scrollToSection = (id) => {

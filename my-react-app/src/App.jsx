@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import "./App.css";
 import "./scroll-experience.css";
 import AfterHero from "./components/AfterHero";
@@ -16,26 +16,33 @@ import Footer from "./components/Footer";
 
 function App() {
   const [loaderComplete, setLoaderComplete] = useState(false);
+  const [introVersion, setIntroVersion] = useState(0);
+  const completeLoader = useCallback(() => setLoaderComplete(true), []);
+  const replayIntro = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+    setLoaderComplete(false);
+    setIntroVersion(version => version + 1);
+  }, []);
 
   return (
     <SmoothScroll>
       <div className="portfolio-root bg-black text-white selection:bg-white selection:text-black">
-        <Reloader onComplete={() => setLoaderComplete(true)} />
+        <Reloader key={introVersion} onComplete={completeLoader} />
         <CustomCursor />
         <Navbar />
 
         <main>
           <Hero loaderComplete={loaderComplete} />
           <AfterHero>
-          <About />
-          <Experience />
-          <ProjectShowcase />
-          <TechUniverse />
-          <ContactSection />
+            <About />
+            <Experience />
+            <ProjectShowcase />
+            <TechUniverse />
+            <ContactSection />
           </AfterHero>
         </main>
 
-        <Footer />
+        <Footer onReplayIntro={replayIntro} />
       </div>
     </SmoothScroll>
   );

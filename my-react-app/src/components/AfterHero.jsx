@@ -8,6 +8,7 @@ export default function AfterHero({ children }) {
     let disposed = false;
     let timer;
     const refresh = () => {
+      if (disposed) return;
       clearTimeout(timer);
       timer = setTimeout(() => {
         if (!disposed) ScrollTrigger.refresh();
