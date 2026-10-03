@@ -1,2 +1,2 @@
 import ProjectShowcase from "./ProjectShowcase";
-export default ProjectShowcase;
+export default ProjectShowcase
