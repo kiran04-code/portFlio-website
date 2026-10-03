@@ -47,7 +47,7 @@ const projects = [
     accent: "#d4c4ef", tint: "#231e2b",
   },
 ].map(project => {
-  const details = projetcs.find(item => item.name === project.id);
+  const details = projetcs.find(item => item.name === project.id)
   return {
     ...project, details,
     live: project.live || details?.liveproject,
