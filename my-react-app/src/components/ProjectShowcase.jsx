@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { images, projetcs } from "../assets/assets";
-import useScrollMotion from "../hooks/useScrollMotion";
+import useScrollMotion from "../hooks/useScrollMotion"
 
 const projects = [
   {
