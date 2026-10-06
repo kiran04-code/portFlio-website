@@ -103,7 +103,7 @@ const Navbar = () => {
     // Keep keyboard focus with the destination when the mobile dialog closes.
     requestAnimationFrame(() => {
       section.setAttribute("tabindex", "-1")
-      section.focus({ preventScroll: true })
+      section.focus({ preventScroll: true });
     });
   };
 
